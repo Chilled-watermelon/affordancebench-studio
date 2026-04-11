@@ -42,6 +42,8 @@
 
 - overview paper 中应包含作者姓名与单位
 - “due to the nature of this submission, reviews will not be double-blind”
+- official Open Source deadline is `May 28, 2026`
+- official Open Source notification date is `July 16, 2026`
 
 但总 author instructions 页面又写：
 
@@ -52,6 +54,7 @@
 1. 以 Open Source track call 为主
 2. 提交前再次核对该 track 的 OpenReview 表单字段
 3. 保证 paper PDF、OpenReview metadata、supplementary ZIP 三者一致
+4. 若 public OpenReview 页面继续把 `Jul 16 2026` 显示成 submission deadline，仍以官方 call 和 important dates 页面为准
 
 ## Final fill-ins before submission
 

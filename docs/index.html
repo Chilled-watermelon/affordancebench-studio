@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AffordanceBench Studio</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #f8fafc;
+        --panel: #ffffff;
+        --ink: #0f172a;
+        --muted: #475569;
+        --line: #dbe5f1;
+        --accent: #2563eb;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background: var(--bg);
+        color: var(--ink);
+        line-height: 1.55;
+      }
+      .container {
+        max-width: 1120px;
+        margin: 0 auto;
+        padding: 32px 20px 56px;
+      }
+      .hero {
+        background: linear-gradient(135deg, #0f172a, #1e293b);
+        color: #f8fafc;
+        border-radius: 22px;
+        padding: 32px;
+        margin-bottom: 24px;
+      }
+      .hero h1 {
+        margin: 0 0 10px;
+        font-size: 2.25rem;
+      }
+      .hero p {
+        margin: 0 0 18px;
+        color: #dbe5f1;
+        max-width: 900px;
+      }
+      .button-row,
+      .badge-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      .button {
+        display: inline-block;
+        padding: 10px 14px;
+        border-radius: 999px;
+        background: #eff6ff;
+        color: #0f172a;
+        text-decoration: none;
+        font-weight: 600;
+      }
+      .button.primary {
+        background: #2563eb;
+        color: #fff;
+      }
+      .grid {
+        display: grid;
+        gap: 18px;
+      }
+      .grid.two {
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      }
+      .panel {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        padding: 22px;
+      }
+      .panel h2, .panel h3 {
+        margin-top: 0;
+      }
+      .metrics {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 14px;
+      }
+      .metric {
+        background: #eff6ff;
+        border-radius: 16px;
+        padding: 16px;
+      }
+      .metric strong {
+        display: block;
+        margin-bottom: 6px;
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+      .metric span {
+        font-size: 1.15rem;
+        font-weight: 700;
+      }
+      img.preview {
+        width: 100%;
+        border-radius: 14px;
+        border: 1px solid var(--line);
+        display: block;
+      }
+      pre {
+        margin: 0;
+        padding: 16px;
+        overflow-x: auto;
+        border-radius: 14px;
+        background: #0f172a;
+        color: #e2e8f0;
+        font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      }
+      ul {
+        margin: 0;
+        padding-left: 18px;
+      }
+      li + li {
+        margin-top: 6px;
+      }
+      .links a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+      .links a:hover {
+        text-decoration: underline;
+      }
+      .section-title {
+        margin: 28px 0 14px;
+        font-size: 1.55rem;
+      }
+      .caption {
+        color: var(--muted);
+        margin-top: 10px;
+        font-size: 0.95rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <section class="hero">
+        <h1>AffordanceBench Studio</h1>
+        <p>
+          Open, software-first toolkit for query processing, evaluation, visualization,
+          profiling, and reproducibility workflows in 3D multimedia affordance research.
+        </p>
+        <div class="button-row">
+          <a class="button primary" href="https://github.com/Chilled-watermelon/affordancebench-studio">Repository</a>
+          <a class="button" href="https://github.com/Chilled-watermelon/affordancebench-studio/releases/tag/v0.1.2">Release v0.1.2</a>
+          <a class="button" href="https://github.com/Chilled-watermelon/affordancebench-studio/archive/refs/tags/v0.1.2.zip">Source ZIP</a>
+          <a class="button" href="https://github.com/Chilled-watermelon/affordancebench-studio/releases/download/v0.1.2/mm26_open_source_overview_paper_v1_20260410.pdf">Overview PDF</a>
+          <a class="button" href="https://github.com/Chilled-watermelon/affordancebench-studio/releases/download/v0.1.2/affordancebench_studio_mm26_open_source_supplementary_v0.1.2.zip">Supplementary ZIP</a>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>Why This Page Exists</h2>
+        <p>
+          This page is designed for OSS reviewers and external users who want one place to inspect
+          the toolkit, download the archive, preview the demo, and verify buildability evidence
+          without digging through a research-only workspace.
+        </p>
+        <div class="metrics">
+          <div class="metric">
+            <strong>Software identity</strong>
+            <span>Unified CLI + public release</span>
+          </div>
+          <div class="metric">
+            <strong>Buildability signals</strong>
+            <span>Linux smoke CI + source-ZIP proof</span>
+          </div>
+          <div class="metric">
+            <strong>Demo readiness</strong>
+            <span>GIF / MP4 + output gallery</span>
+          </div>
+          <div class="metric">
+            <strong>Real evidence</strong>
+            <span>OpenAD smoke + LASO heatmap smoke</span>
+          </div>
+        </div>
+      </section>
+
+      <h2 class="section-title">One-Minute Reviewer Path</h2>
+      <div class="panel">
+        <pre>pip install -r requirements.txt
+pip install -e .
+
+affordbench env-check
+affordbench list
+affordbench describe laso-qaq
+bash examples/demo_simulation_reviewer_walkthrough.sh</pre>
+        <p class="caption">
+          This path emphasizes environment diagnostics, command discovery, dry-run resolution,
+          and pointers to validated remote smoke evidence.
+        </p>
+      </div>
+
+      <h2 class="section-title">Demo And Output Gallery</h2>
+      <div class="grid two">
+        <div class="panel">
+          <h3>Simulation-First Demo</h3>
+          <a href="https://raw.githubusercontent.com/Chilled-watermelon/affordancebench-studio/main/submission/demo_assets/generated/simulation_reviewer_demo.mp4">
+            <img class="preview" src="https://raw.githubusercontent.com/Chilled-watermelon/affordancebench-studio/main/submission/demo_assets/generated/simulation_reviewer_demo.gif" alt="Simulation-first reviewer demo">
+          </a>
+          <p class="caption">
+            Lightweight reviewer walkthrough covering environment checks, command discovery,
+            dry-run resolution, and public evidence links.
+          </p>
+        </div>
+        <div class="panel">
+          <h3>Reviewer Output Gallery</h3>
+          <a href="https://raw.githubusercontent.com/Chilled-watermelon/affordancebench-studio/main/submission/output_gallery/generated/reviewer_output_gallery.png">
+            <img class="preview" src="https://raw.githubusercontent.com/Chilled-watermelon/affordancebench-studio/main/submission/output_gallery/generated/reviewer_output_gallery.png" alt="Reviewer-facing output gallery">
+          </a>
+          <p class="caption">
+            Combines environment inspection, dry-run cards, a real anchor-map JSON preview,
+            a real sensitivity figure, heatmap evidence, and a profiling summary card.
+          </p>
+        </div>
+      </div>
+
+      <h2 class="section-title">Validation Evidence</h2>
+      <div class="grid two links">
+        <div class="panel">
+          <h3>Install And Packaging</h3>
+          <ul>
+            <li><a href="https://github.com/Chilled-watermelon/affordancebench-studio/blob/main/submission/clean_venv_build_evidence_20260411.md">Clean virtualenv build evidence</a></li>
+            <li><a href="https://github.com/Chilled-watermelon/affordancebench-studio/blob/main/submission/source_zip_build_evidence_20260411.md">Public source-ZIP build evidence</a></li>
+            <li><a href="https://github.com/Chilled-watermelon/affordancebench-studio/blob/main/.github/workflows/linux-smoke.yml">Linux smoke CI workflow</a></li>
+            <li><a href="https://github.com/Chilled-watermelon/affordancebench-studio/blob/main/submission/openreview_public_entry_check_20260411.md">OpenReview public entry check</a></li>
+            <li><a href="https://github.com/Chilled-watermelon/affordancebench-studio/blob/main/submission/pdf_visual_check_20260411.md">Paper layout and page-count check</a></li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>Execution Evidence</h3>
+          <ul>
+            <li><a href="https://github.com/Chilled-watermelon/affordancebench-studio/blob/main/submission/local_dry_run_evidence_20260411.md">Local dry-run evidence</a></li>
+            <li><a href="https://github.com/Chilled-watermelon/affordancebench-studio/blob/main/submission/remote_openad_smoke_evidence_20260411.md">Remote OpenAD smoke</a></li>
+            <li><a href="https://github.com/Chilled-watermelon/affordancebench-studio/blob/main/submission/remote_laso_heatmap_smoke_evidence_20260411.md">Remote LASO + heatmap smoke</a></li>
+            <li><a href="https://github.com/Chilled-watermelon/affordancebench-studio/blob/main/submission/output_gallery/README.md">Output gallery generation notes</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <h2 class="section-title">Software Snapshot</h2>
+      <div class="grid two links">
+        <div class="panel">
+          <h3>What Reviewers Can Inspect Quickly</h3>
+          <ul>
+            <li><strong>Setup:</strong> `env-check`, `list`, `describe`, and CI-backed smoke</li>
+            <li><strong>Workflow coverage:</strong> training, evaluation, LASO, visualization, profiling, and packaging helpers</li>
+            <li><strong>Compatibility:</strong> explicit env vars, runtime shims, `openai_CLIP` auto-discovery, CPU-safe smoke path</li>
+            <li><strong>Packaging maturity:</strong> `README.md`, `pyproject.toml`, `requirements.txt`, `Dockerfile`, `docs/`, and `submission/`</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>Documentation</h3>
+          <ul>
+            <li><a href="https://github.com/Chilled-watermelon/affordancebench-studio/blob/main/README.md">README</a></li>
+            <li><a href="https://github.com/Chilled-watermelon/affordancebench-studio/blob/main/docs/quickstart.md">Quickstart</a></li>
+            <li><a href="https://github.com/Chilled-watermelon/affordancebench-studio/blob/main/docs/command_reference.md">Command reference</a></li>
+            <li><a href="https://github.com/Chilled-watermelon/affordancebench-studio/blob/main/docs/reproducibility.md">Reproducibility notes</a></li>
+            <li><a href="https://github.com/Chilled-watermelon/affordancebench-studio/blob/main/submission/README.md">Submission package index</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <h2 class="section-title">Public-Safe Scope</h2>
+      <div class="panel">
+        <p>
+          This release is intentionally scoped for software inspection. It does not bundle large
+          benchmark datasets, under-review main-paper checkpoints, or final paper-facing figures
+          by default.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

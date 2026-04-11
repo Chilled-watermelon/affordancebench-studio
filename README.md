@@ -3,6 +3,7 @@
   <p><strong>Open toolkit for query processing, evaluation, visualization, profiling, and reproducibility workflows in 3D multimedia affordance research.</strong></p>
   <p>
     <a href="https://github.com/Chilled-watermelon/affordancebench-studio/releases/tag/v0.1.2"><img alt="release" src="https://img.shields.io/github/v/release/Chilled-watermelon/affordancebench-studio?label=release"></a>
+    <a href="https://github.com/Chilled-watermelon/affordancebench-studio/actions/workflows/linux-smoke.yml"><img alt="linux smoke" src="https://github.com/Chilled-watermelon/affordancebench-studio/actions/workflows/linux-smoke.yml/badge.svg"></a>
     <a href="./LICENSE"><img alt="license" src="https://img.shields.io/badge/license-MIT-blue.svg"></a>
     <img alt="python" src="https://img.shields.io/badge/python-%3E%3D3.9-informational">
     <a href="https://github.com/Chilled-watermelon/affordancebench-studio/releases/download/v0.1.2/mm26_open_source_overview_paper_v1_20260410.pdf"><img alt="overview paper" src="https://img.shields.io/badge/overview%20paper-PDF-red"></a>
@@ -10,6 +11,7 @@
   </p>
   <p>
     <a href="#quickstart">Quickstart</a> •
+    <a href="docs/index.md">Project Page</a> •
     <a href="#reviewer-friendly-path">Reviewer Path</a> •
     <a href="#command-families">Command Families</a> •
     <a href="#validation-evidence">Validation Evidence</a> •
@@ -92,6 +94,24 @@ bash submission/demo_assets/generate_simulation_demo_assets.sh
 
 <img src="submission/demo_assets/generated/simulation_reviewer_demo.gif" alt="Simulation-first reviewer demo for AffordanceBench Studio" width="900">
 
+## Output Gallery
+
+The repository now also includes a compact reviewer-facing gallery of software outputs and evidence cards:
+
+```bash
+/usr/bin/python3 submission/output_gallery/generate_output_gallery_assets.py
+```
+
+<img src="submission/output_gallery/generated/reviewer_output_gallery.png" alt="Reviewer-facing output gallery for AffordanceBench Studio" width="900">
+
+This gallery combines:
+
+1. environment-check and dry-run inspection cards
+2. a real anchor-map JSON preview generated through the CLI
+3. a real sensitivity figure generated through the CLI
+4. a real profiling summary derived from the remote smoke
+5. a heatmap evidence card that proves figure generation without copying an under-review paper figure directly into the OSS package
+
 ## Command Families
 
 | Family | Representative commands | Purpose |
@@ -107,9 +127,12 @@ bash submission/demo_assets/generate_simulation_demo_assets.sh
 
 The repository already includes review-facing evidence instead of only raw scripts:
 
+- public Linux smoke CI: `.github/workflows/linux-smoke.yml`
 - local dry-run evidence: `submission/local_dry_run_evidence_20260411.md`
 - remote OpenAD-only smoke evidence: `submission/remote_openad_smoke_evidence_20260411.md`
 - remote LASO + render-heatmap smoke evidence: `submission/remote_laso_heatmap_smoke_evidence_20260411.md`
+- public source-ZIP install evidence: `submission/source_zip_build_evidence_20260411.md`
+- OpenReview public entry check: `submission/openreview_public_entry_check_20260411.md`
 - PDF layout and page-count check: `submission/pdf_visual_check_20260411.md`
 
 ## Release Artifacts
@@ -160,12 +183,15 @@ affordancebench_studio/
 ## Documentation
 
 - quickstart: `docs/quickstart.md`
+- project page: `docs/index.md`
+- Pages-ready project page: `docs/index.html`
 - architecture: `docs/architecture.md`
 - command reference: `docs/command_reference.md`
 - reproducibility notes: `docs/reproducibility.md`
 - extending the bridge: `docs/extending_bridge.md`
 - examples: `examples/README.md`
 - submission package: `submission/README.md`
+- output gallery: `submission/output_gallery/README.md`
 
 ## Current Status
 

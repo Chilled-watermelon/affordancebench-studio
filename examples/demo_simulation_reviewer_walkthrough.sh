@@ -14,10 +14,12 @@ PROFILE_NUM_POINTS="${PROFILE_NUM_POINTS:-512}"
 PROFILE_NUM_RUNS="${PROFILE_NUM_RUNS:-5}"
 PROFILE_NUM_WARMUPS="${PROFILE_NUM_WARMUPS:-1}"
 
-if command -v affordbench >/dev/null 2>&1; then
-  AFFORDBENCH=(affordbench)
+PYTHON_BIN="${PYTHON:-python3}"
+if [[ -n "${AFFORDBENCH_BIN:-}" ]]; then
+  AFFORDBENCH=("$AFFORDBENCH_BIN")
 else
-  PYTHON_BIN="${PYTHON:-python3}"
+  # Prefer the repo-local module entrypoint so smoke runs do not accidentally
+  # resolve to an unrelated affordbench binary left on PATH.
   AFFORDBENCH=("$PYTHON_BIN" -m affordbench.cli)
 fi
 

@@ -15,6 +15,20 @@
 
 ## Recommended smoke order
 
+### Public Linux smoke CI
+
+GitHub Actions now covers a neutral Linux smoke path through:
+
+- `.github/workflows/linux-smoke.yml`
+
+The workflow validates:
+
+1. `pip install -r requirements.txt`
+2. `pip install -e .`
+3. `affordbench list`
+4. `affordbench describe laso-qaq`
+5. `bash examples/demo_simulation_reviewer_walkthrough.sh`
+
 ### Local dry-run smoke
 
 1. `affordbench env-check`
@@ -35,6 +49,21 @@
 对应证据可见：
 
 - `submission/clean_venv_build_evidence_20260411.md`
+
+### Public source-ZIP install smoke
+
+如果想进一步证明 tagged archive 本身也能独立工作，可走：
+
+1. download `v0.1.2.zip`
+2. extract the source archive into a temp directory
+3. create or reuse an unrelated virtualenv
+4. `pip install <extracted_source_archive>`
+5. `affordbench list`
+6. `bash examples/demo_simulation_reviewer_walkthrough.sh`
+
+对应证据可见：
+
+- `submission/source_zip_build_evidence_20260411.md`
 
 ### Linux/GPU real smoke
 

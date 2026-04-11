@@ -22,10 +22,16 @@
   - `TC/写作/paper工程/paper/drafts/mm26_open_source_overview_paper_v1_20260410.tex`
 - project page template:
   - `submission/project_page_template.md`
+- published project page source:
+  - `docs/index.md`
+- Pages-ready project page:
+  - `docs/index.html`
 - demo walkthrough:
   - `submission/demo_walkthrough.md`
 - demo assets:
   - `submission/demo_assets/README.md`
+- output gallery:
+  - `submission/output_gallery/README.md`
 - review alignment:
   - `submission/review_alignment.md`
 - OSS benchmark gap analysis:
@@ -52,6 +58,10 @@
   - `submission/local_dry_run_evidence_20260411.md`
 - clean venv build evidence:
   - `submission/clean_venv_build_evidence_20260411.md`
+- source ZIP build evidence:
+  - `submission/source_zip_build_evidence_20260411.md`
+- OpenReview public entry check:
+  - `submission/openreview_public_entry_check_20260411.md`
 - remote OpenAD smoke evidence:
   - `submission/remote_openad_smoke_evidence_20260411.md`
 - remote LASO + heatmap smoke evidence:

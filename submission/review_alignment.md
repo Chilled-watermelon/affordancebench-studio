@@ -76,6 +76,7 @@ Current evidence:
 - OpenAD-only profiling dry-run
 - `submission/demo_assets/generated/simulation_reviewer_demo.gif`
 - `submission/demo_assets/generated/simulation_reviewer_demo.mp4`
+- `submission/output_gallery/generated/reviewer_output_gallery.png`
 
 Reviewer takeaway:
 
@@ -95,6 +96,8 @@ Current evidence:
 - `pyproject.toml`
 - local dry-run evidence
 - clean-venv build evidence
+- source-ZIP build evidence
+- OpenReview public entry check
 - remote OpenAD smoke evidence
 - remote LASO + heatmap smoke evidence
 
@@ -136,6 +139,7 @@ Current evidence:
 - polished public README
 - quickstart and reproducibility notes
 - reviewer-oriented demo walkthrough
+- reviewer-facing output gallery
 - benchmark-gap note
 - project page template
 - OpenReview checklist

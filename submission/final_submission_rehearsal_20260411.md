@@ -6,6 +6,9 @@
 - track: Open Source Software Track
 - deadline: `2026-05-28 23:59 AoE`
 - Beijing time: `2026-05-29 19:59`
+- public OpenReview venue page currently shows `Jul 16 2026 11:59PM UTC-0` as a deadline-like string; treat this as a venue-page inconsistency unless the signed-in form confirms otherwise
+- deadline discrepancy notes:
+  - `submission/openreview_public_entry_check_20260411.md`
 
 ## Final paper artifact
 
@@ -56,10 +59,18 @@
   - `submission/local_dry_run_evidence_20260411.md`
 - clean installability:
   - `submission/clean_venv_build_evidence_20260411.md`
+- public source-ZIP installability:
+  - `submission/source_zip_build_evidence_20260411.md`
 - remote OpenAD smoke:
   - `submission/remote_openad_smoke_evidence_20260411.md`
 - remote LASO + heatmap smoke:
   - `submission/remote_laso_heatmap_smoke_evidence_20260411.md`
+- OpenReview public entry check:
+  - `submission/openreview_public_entry_check_20260411.md`
+- OpenReview screenshots:
+  - `submission/openreview_track_page_20260411.png`
+  - `submission/openreview_login_page_20260411.png`
+  - `submission/openreview_invitation_page_20260411.png`
 - simulation-first demo:
   - `submission/demo_assets/generated/simulation_reviewer_demo.gif`
   - `submission/demo_assets/generated/simulation_reviewer_demo.mp4`
@@ -72,10 +83,12 @@
 4. set the project URL to the public repository
 5. set the source ZIP URL to the `v0.1.2` archive
 6. if OpenReview exposes an additional software/demo URL field, use the `v0.1.2` release page
+7. if the signed-in form still shows `Jul 16 2026` as the submission deadline, capture that mismatch and consider contacting the OSS chairs before relying on it
 
 ## Remaining manual action at actual submission time
 
 - verify every co-author's OpenReview profile is complete
 - inspect the live OpenReview form fields one more time before pressing submit
 - confirm the uploaded supplementary ZIP matches the final local file
-- note: the public OpenReview track URL is reachable, but public fetching only exposes a shell page; the real form-side check still requires a signed-in browser session
+- note: the public OpenReview track URL and login gate were verified directly in-browser; the real form-side upload check still requires a signed-in session
+- note: the live `api2` submission invitation schema was also inspected and currently exposes `title`, `authors`, `authorids`, `keywords`, `TLDR`, `abstract`, and `pdf`, but no separate public `supplementary ZIP` / `project URL` / `source ZIP URL` field

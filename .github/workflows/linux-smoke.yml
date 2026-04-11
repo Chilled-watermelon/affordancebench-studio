@@ -1,0 +1,47 @@
+name: linux-smoke
+
+on:
+  push:
+    branches:
+      - main
+    tags:
+      - "v*"
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      PIP_DISABLE_PIP_VERSION_CHECK: "1"
+      PYTHONUNBUFFERED: "1"
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+          cache: pip
+
+      - name: Upgrade pip
+        run: python -m pip install --upgrade pip
+
+      - name: Install runtime requirements
+        run: pip install -r requirements.txt
+
+      - name: Install affordbench package
+        run: pip install -e .
+
+      - name: CLI command discovery smoke
+        run: |
+          affordbench list
+          affordbench describe laso-qaq
+
+      - name: Simulation-first reviewer smoke
+        run: bash examples/demo_simulation_reviewer_walkthrough.sh
