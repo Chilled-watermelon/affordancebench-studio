@@ -37,7 +37,7 @@
 
 Planned public source ZIP URL:
 
-- `https://github.com/Chilled-watermelon/affordancebench-studio/archive/refs/tags/v0.1.1.zip`
+- `https://github.com/Chilled-watermelon/affordancebench-studio/archive/refs/tags/v0.1.2.zip`
 
 - [x] ZIP 内 `README` 可独立理解
 - [x] ZIP 内 `LICENSE` 存在

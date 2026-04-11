@@ -38,6 +38,23 @@ affordbench render-heatmap -- \
 bash examples/demo_smoke_walkthrough.sh dry-run
 ```
 
+## Simulation-first reviewer demo script
+
+```bash
+bash examples/demo_simulation_reviewer_walkthrough.sh
+```
+
+这条路径会把：
+
+- clean-machine diagnostics
+- command discovery
+- LASO dry-run
+- figure dry-run
+- OpenAD-only profiling dry-run
+- validated smoke evidence
+
+串成一条 `60-90` 秒内能讲清楚的软件演示路径。
+
 ## OpenAD-only demo script
 
 ```bash

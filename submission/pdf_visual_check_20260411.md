@@ -16,6 +16,7 @@
 - 当前 PDF 为 `4` 页
 - 已在补入远端 smoke 相关表述后重新编译，页数仍为 `4`
 - 已换成真实作者姓名、单位、邮箱与公开仓库 URL 后重新核查，页数仍为 `4`
+- 已补入 `simulation-first demo` 与 `clean local virtual environment` 表述后再次核查，页数仍为 `4`
 - 首页标题、作者块、摘要、关键词布局正常
 - 原先默认 `Conference'17` 样例页眉已移除
 - running head 过长问题已通过短标题修正

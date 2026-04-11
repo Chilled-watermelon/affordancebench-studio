@@ -1,0 +1,19 @@
+Validated reviewer-facing evidence:
+
+- submission/local_dry_run_evidence_20260411.md
+- submission/remote_openad_smoke_evidence_20260411.md
+- submission/remote_laso_heatmap_smoke_evidence_20260411.md
+- submission/pdf_visual_check_20260411.md
+
+Public release links:
+
+- repo: https://github.com/Chilled-watermelon/affordancebench-studio
+- release: .../releases/tag/v0.1.2
+- source ZIP: .../archive/refs/tags/v0.1.2.zip
+- overview PDF: .../releases/download/v0.1.2/
+  mm26_open_source_overview_paper_v1_20260410.pdf
+
+Simulation-first message:
+
+Reviewers can inspect the toolkit and its expected outputs without needing
+robot hardware or a full benchmark deployment on the first pass.

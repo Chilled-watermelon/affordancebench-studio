@@ -1,0 +1,12 @@
+$ affordbench describe profile-efficiency
+Name:        profile-efficiency
+Category:    profile
+Runner:      python
+Description: Model efficiency profiling (Params / FLOPs / Latency / FPS)
+Notes:       Useful for technical-depth and buildability evidence.
+Example:     affordbench profile-efficiency -- --config config/openad_pn2/estimation_cfg.py --device cpu
+
+$ affordbench profile-efficiency --dry-run -- --config config/openad_pn2/full_shape_cfg.py --device cpu --num_points 512 --num_runs 5 --num_warmups 1
+Resolved command:
+python .../affordbench/legacy_scripts/profile_efficiency.py --config config/openad_pn2/full_shape_cfg.py --device cpu --num_points 512 --num_runs 5 --num_warmups 1
+Injected runtime shims: .../affordbench/runtime_shims

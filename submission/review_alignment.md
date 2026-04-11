@@ -1,147 +1,156 @@
 # Review Alignment
 
-## Why this matters
+## Why this file exists
 
-ACM MM Open Source Software Track 的评审重点不只是“有代码”，而是：
+The ACM MM Open Source Software Track does not reward code availability alone. It rewards software that is:
 
-- broad applicability
-- potential impact
-- novelty
-- technical depth
-- demo suitability
-- maturity
-- compatibility
-- no dependence on closed source
-- documentation quality
+- broadly applicable
+- impactful
+- technically deep
+- demo-friendly
+- mature enough to inspect and build
+- compatible with realistic reviewer environments
+- well documented
 
-本文件把当前 toolkit 骨架与这些标准逐项对齐。
+This note maps `AffordanceBench Studio` to those criteria in software terms rather than in method-paper terms.
 
-## 1. Broad applicability
+## Criterion-by-criterion alignment
 
-当前对应证据：
+### 1. Broad applicability
 
-- 训练、评测、LASO、可视化、profile、ops 不只是一条单任务脚本
-- 同时覆盖 OpenAD-style 与 LASO-style workflow
-- 统一 CLI 让不同用户都能从同一个入口发现命令
+Current evidence:
 
-还可继续补强：
+- one CLI covers training, evaluation, LASO, visualization, profiling, and packaging utilities
+- the package bridges both OpenAD-style and LASO-style workflows
+- dry-run inspection makes the command layer useful even before full dataset preparation
 
-- 增加更多 dataset adapter 文档
-- 增加一个更“通用”的 smoke example
+Reviewer takeaway:
 
-## 2. Potential impact
+The toolkit is not tied to a single figure script or one benchmark table. It supports a family of affordance-research workflows.
 
-当前对应证据：
+### 2. Potential impact
 
-- 将零散研究脚本收口成统一软件入口
-- 明确 quickstart / reproducibility / submission docs
-- 降低后续研究者上手成本
+Current evidence:
 
-还可继续补强：
+- scattered internal scripts are reorganized into a buildable public package
+- quickstart, reproducibility notes, and reviewer-facing submission materials reduce onboarding cost
+- simulation-first and remote-smoke paths make the toolkit easier to inspect by third parties
 
-- 做一个 public project page
-- 做一张软件架构图
+Reviewer takeaway:
 
-## 3. Novelty
+The main value proposition is engineering friction reduction for future users, not only the release of one experiment.
 
-这里不要把 novelty 写成“新方法”。
+### 3. Novelty
 
-当前更稳的写法是：
+Current framing:
 
-- novelty 在于软件组织方式
-- 把 query processing、evaluation、visualization、profiling 和 release discipline 放到一个统一 toolkit 中
-- 提供 public-safe release discipline，避免研究代码直接裸奔
+- novelty is expressed through software organization and release discipline
+- query processing, evaluation, visualization, profiling, and packaging live under one command registry
+- the public-facing layer is separated from legacy internals through a thicker bridge rather than a risky full rewrite
 
-## 4. Technical depth
+Reviewer takeaway:
 
-当前对应证据：
+This submission should be read as a software architecture and packaging contribution, not as a new model paper.
 
-- training / evaluation / visualization / profiling / packaging 多模块并存
-- 支持 shell workflow 与 python workflow
-- 有 command registry 和 legacy bridge
+### 4. Technical depth
 
-还可继续补强：
+Current evidence:
 
-- 在 overview paper 中专门加一个 “software architecture” 小节
+- mixed Python and shell workflows
+- command registry plus legacy bridge
+- compatibility helpers for `openai_CLIP`, `torch_cluster.fps`, CPU-safe profiling, and OpenAD loading paths
+- profiling, visualization, and packaging utilities in addition to benchmark-oriented scripts
 
-## 5. Demo suitability
+Reviewer takeaway:
 
-当前对应证据：
+The package contains enough systems and tooling work to be more than a thin wrapper around a single script.
 
-- `env-check`
-- `laso-anchor-map`
-- `laso-qaq`
-- `render-heatmap`
+### 5. Demo suitability
 
-这些都可作为短演示路径。
+Current evidence:
 
-还可继续补强：
+- `affordbench env-check`
+- `affordbench list`
+- `affordbench describe <command>`
+- LASO dry-run and figure dry-run paths
+- OpenAD-only profiling dry-run
+- `submission/demo_assets/generated/simulation_reviewer_demo.gif`
+- `submission/demo_assets/generated/simulation_reviewer_demo.mp4`
 
-- 准备一个 `2-3` 分钟的轻量 command-line demo video
+Reviewer takeaway:
 
-## 6. Maturity
+The toolkit now supports a `60-90` second simulation-first demo that does not require robot hardware or a full benchmark deployment on the first pass.
 
-当前对应证据：
+### 6. Maturity
 
-- `README`
-- `quickstart`
-- `command_reference`
-- `reproducibility`
-- `submission` 目录
-- `LICENSE`
-- `Dockerfile`
-- `pyproject.toml`
-- 本地 dry-run evidence
-- 远端 OpenAD-only 真实 smoke evidence
-- 远端 LASO + figure 真实 smoke evidence
-
-这已经比“只有脚本，没有仓库形态”的状态成熟很多。
-
-## 7. Compatibility
-
-当前对应证据：
-
-- 环境变量规范
-- relative-path + explicit args 优先
-- legacy bridge 避免一次性重写
-- 对 `openai_CLIP` 的自动发现
-- 对 reviewer 常见缺失依赖的 runtime shim（如 `torch_cluster.fps`）
-- profiling 路径对 legacy CUDA 假设和无关模型依赖的兼容吸收
-- Linux 主机上的完整 LASO + render-heatmap 实跑
-
-还可继续补强：
-
-- 若时间允许，再补一段短 demo 录屏或一条 GPU-mode smoke
-
-## 8. No dependence on closed source
-
-当前做法：
-
-- 公开版不默认捆绑闭源依赖
-- 移除了硬编码 secrets
-- API key 改为环境变量注入
-
-还要继续做：
-
-- 提交前再次扫 secrets
-- 检查是否还有私有路径或私有 token
-
-## 9. Documentation quality
-
-当前对应证据：
+Current evidence:
 
 - `README.md`
 - `docs/quickstart.md`
-- `docs/architecture.md`
 - `docs/command_reference.md`
 - `docs/reproducibility.md`
-- `submission/openreview_checklist.md`
+- `submission/` package
+- `LICENSE`
+- `Dockerfile`
+- `pyproject.toml`
+- local dry-run evidence
+- clean-venv build evidence
+- remote OpenAD smoke evidence
+- remote LASO + heatmap smoke evidence
+
+Reviewer takeaway:
+
+This is already closer to a first public software release than to a loose research-code archive.
+
+### 7. Compatibility
+
+Current evidence:
+
+- explicit environment variables and argument-driven paths
+- repo-local legacy scripts and runtime shims
+- `openai_CLIP` auto-discovery
+- pure PyTorch fallback for `torch_cluster.fps`
+- CPU-safe OpenAD profiling and Linux remote smoke evidence
+- fresh virtual-environment install evidence
+
+Reviewer takeaway:
+
+The repository is intentionally designed for imperfect reviewer machines rather than only the authors' original setup.
+
+### 8. No dependence on closed source
+
+Current evidence:
+
+- no bundled non-open proprietary dependency is required by default
+- secrets and hard-coded private paths have been removed from public-facing material
+- credentials are expected through environment variables rather than embedded tokens
+
+Reviewer takeaway:
+
+The release is consistent with the track's open-software expectations.
+
+### 9. Documentation quality
+
+Current evidence:
+
+- polished public README
+- quickstart and reproducibility notes
+- reviewer-oriented demo walkthrough
+- benchmark-gap note
+- project page template
+- OpenReview checklist
+
+Reviewer takeaway:
+
+The package explains not only what code exists, but how to inspect, build, demo, and package it.
 
 ## Current strategic conclusion
 
-如果要最大化中稿概率，当前最应该继续补的是：
+The submission is strongest when presented as:
 
-1. 更厚的命令桥接层
-2. 更正式的 overview paper
-3. 一条可录屏的最小 demo 路径
-4. 一次 Linux 主机上的完整 smoke walkthrough（CPU 版已完成，可继续补 GPU 版或录屏）
+1. a software-first toolkit
+2. a simulation-first reviewer experience
+3. a public-safe release with real smoke evidence
+4. a compatibility-oriented bridge for legacy affordance workflows
+
+The remaining acceptance risk is no longer “there is no software package.” It is mainly whether reviewers judge the current release mature and demo-friendly enough relative to other OSS submissions. The new demo assets, clean-venv build evidence, and public release alignment are aimed directly at that risk.

@@ -24,8 +24,12 @@
   - `submission/project_page_template.md`
 - demo walkthrough:
   - `submission/demo_walkthrough.md`
+- demo assets:
+  - `submission/demo_assets/README.md`
 - review alignment:
   - `submission/review_alignment.md`
+- OSS benchmark gap analysis:
+  - `submission/oss_benchmark_gap_analysis_20260411.md`
 - acceptance maximization plan:
   - `submission/acceptance_maximization_plan.md`
 - official requirements check:
@@ -34,6 +38,8 @@
   - `submission/github_homepage_copy.md`
 - final fill-ins:
   - `submission/final_fill_ins.md`
+- final submission rehearsal:
+  - `submission/final_submission_rehearsal_20260411.md`
 - smoke evidence template:
   - `submission/smoke_evidence_template.md`
 - pdf visual check:
@@ -44,6 +50,8 @@
   - `submission/supplementary_zip_file_list.md`
 - local dry-run evidence:
   - `submission/local_dry_run_evidence_20260411.md`
+- clean venv build evidence:
+  - `submission/clean_venv_build_evidence_20260411.md`
 - remote OpenAD smoke evidence:
   - `submission/remote_openad_smoke_evidence_20260411.md`
 - remote LASO + heatmap smoke evidence:

@@ -84,10 +84,10 @@ This project page should describe the toolkit itself. It should not claim to rel
 ## Links
 
 - code: `https://github.com/Chilled-watermelon/affordancebench-studio`
-- release: `https://github.com/Chilled-watermelon/affordancebench-studio/releases/tag/v0.1.1`
-- source zip: `https://github.com/Chilled-watermelon/affordancebench-studio/archive/refs/tags/v0.1.1.zip`
+- release: `https://github.com/Chilled-watermelon/affordancebench-studio/releases/tag/v0.1.2`
+- source zip: `https://github.com/Chilled-watermelon/affordancebench-studio/archive/refs/tags/v0.1.2.zip`
 - docs: `docs/`
-- overview paper: `https://github.com/Chilled-watermelon/affordancebench-studio/releases/download/v0.1.1/mm26_open_source_overview_paper_v1_20260410.pdf`
+- overview paper: `https://github.com/Chilled-watermelon/affordancebench-studio/releases/download/v0.1.2/mm26_open_source_overview_paper_v1_20260410.pdf`
 - demo walkthrough: `submission/demo_walkthrough.md`
 - smoke evidence: `submission/remote_laso_heatmap_smoke_evidence_20260411.md`
 - license: `LICENSE`

@@ -1,0 +1,19 @@
+$ affordbench list
+Built-in commands:
+  list
+  describe <command>
+
+Available bridge commands:
+  [core]     env-check
+  [eval]     eval-risk, eval-ablation, eval-boundary
+  [laso]     laso-anchor-map, laso-qaq, laso-zeroshot
+  [viz]      render-heatmap, visualize-tsne, plot-sensitivity
+  [profile]  profile-efficiency, profile-stage-breakdown
+  [ops]      generate-backup-manifest, gdrive-download
+
+$ affordbench describe laso-qaq
+Name:        laso-qaq
+Category:    laso
+Runner:      python
+Description: LASO Question-as-Query entrypoint
+Example:     affordbench laso-qaq -- --checkpoint log/tc_prior_run1/best_model.t7

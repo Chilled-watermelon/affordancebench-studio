@@ -23,6 +23,19 @@
 4. `affordbench laso-anchor-map --dry-run`
 5. `affordbench laso-qaq --dry-run`
 
+### Clean-environment install smoke
+
+如果想证明项目不是“只能在作者机器上跑”，推荐再补：
+
+1. `python3 -m venv <fresh_venv>`
+2. `pip install -e .`
+3. `affordbench list`
+4. `bash examples/demo_simulation_reviewer_walkthrough.sh`
+
+对应证据可见：
+
+- `submission/clean_venv_build_evidence_20260411.md`
+
 ### Linux/GPU real smoke
 
 1. `affordbench env-check`
@@ -50,4 +63,4 @@
 - 不在 examples 中默认分发主稿权重
 - 所有命令都优先通过环境变量和显式参数配置
 - 当前公开仓库 URL：`https://github.com/Chilled-watermelon/affordancebench-studio`
-- 当前 source ZIP URL：`https://github.com/Chilled-watermelon/affordancebench-studio/archive/refs/tags/v0.1.1.zip`
+- 当前 source ZIP URL：`https://github.com/Chilled-watermelon/affordancebench-studio/archive/refs/tags/v0.1.2.zip`

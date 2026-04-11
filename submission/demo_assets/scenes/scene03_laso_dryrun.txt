@@ -1,0 +1,27 @@
+$ affordbench laso-anchor-map --dry-run -- \
+  --out /path/to/LASO_dataset/laso_anchor_map.json
+Resolved command:
+python .../affordbench/legacy_scripts/laso_build_anchor_map.py \
+  --out /path/to/LASO_dataset/laso_anchor_map.json
+Injected runtime shims: .../affordbench/runtime_shims
+
+$ affordbench laso-qaq --dry-run -- \
+  --openad_base /path/to/openad_repo \
+  --laso_root /path/to/LASO_dataset \
+  --checkpoint log/tc_prior_run1/best_model.t7
+Resolved command:
+python .../affordbench/legacy_scripts/gpu3_laso_q_as_q.py \
+  --openad_base /path/to/openad_repo \
+  --laso_root /path/to/LASO_dataset \
+  --checkpoint log/tc_prior_run1/best_model.t7
+Injected runtime shims: .../affordbench/runtime_shims
+
+$ affordbench render-heatmap --dry-run -- \
+  --root /path/to/openad_repo \
+  --ckpt_ours log/tc_prior_run1/best_model.t7 \
+  --ckpt_abl log/ablation_B_no_repulsion/best_model.t7
+Resolved command:
+python .../affordbench/legacy_scripts/render_heatmap.py \
+  --root /path/to/openad_repo \
+  --ckpt_ours log/tc_prior_run1/best_model.t7 \
+  --ckpt_abl log/ablation_B_no_repulsion/best_model.t7

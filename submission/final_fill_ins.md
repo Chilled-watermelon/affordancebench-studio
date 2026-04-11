@@ -31,9 +31,9 @@
 - public repo URL
   - `https://github.com/Chilled-watermelon/affordancebench-studio`
 - release URL
-  - `https://github.com/Chilled-watermelon/affordancebench-studio/releases/tag/v0.1.1`
+  - `https://github.com/Chilled-watermelon/affordancebench-studio/releases/tag/v0.1.2`
 - overview paper PDF URL
-  - `https://github.com/Chilled-watermelon/affordancebench-studio/releases/download/v0.1.1/mm26_open_source_overview_paper_v1_20260410.pdf`
+  - `https://github.com/Chilled-watermelon/affordancebench-studio/releases/download/v0.1.2/mm26_open_source_overview_paper_v1_20260410.pdf`
 - issue tracker URL
   - `https://github.com/Chilled-watermelon/affordancebench-studio/issues`
 
@@ -42,7 +42,7 @@
 - final author metadata
   - use the same author order, affiliations, and emails as the PPSN paper block
 - final public ZIP URL
-  - `https://github.com/Chilled-watermelon/affordancebench-studio/archive/refs/tags/v0.1.1.zip`
+  - `https://github.com/Chilled-watermelon/affordancebench-studio/archive/refs/tags/v0.1.2.zip`
 
 ## Items still pending
 

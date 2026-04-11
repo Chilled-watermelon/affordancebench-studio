@@ -28,6 +28,8 @@
 - [x] 有 `Dockerfile`
 - [x] 有统一 CLI
 - [x] 有 demo walkthrough
+- [x] 有 simulation-first reviewer demo assets
+- [x] 有 clean virtualenv install evidence
 - [x] 已按 PPSN 论文作者块补作者姓名 / 单位 / 邮箱
 - [x] 已确定最终 public URL
 - [x] 已补一份远端 OpenAD-only 真实 smoke log
@@ -56,12 +58,12 @@
 - 实际项目 public URL
   - `https://github.com/Chilled-watermelon/affordancebench-studio`
 - release URL
-  - `https://github.com/Chilled-watermelon/affordancebench-studio/releases/tag/v0.1.1`
+  - `https://github.com/Chilled-watermelon/affordancebench-studio/releases/tag/v0.1.2`
 - 作者姓名与单位
   - 已按桌面 `PPSN_CURRENT.tex` 的作者块对齐
 - overview paper 中的 public URL 行
 - overview paper PDF URL
-  - `https://github.com/Chilled-watermelon/affordancebench-studio/releases/download/v0.1.1/mm26_open_source_overview_paper_v1_20260410.pdf`
+  - `https://github.com/Chilled-watermelon/affordancebench-studio/releases/download/v0.1.2/mm26_open_source_overview_paper_v1_20260410.pdf`
 - source zip 公开下载位置
-  - `https://github.com/Chilled-watermelon/affordancebench-studio/archive/refs/tags/v0.1.1.zip`
+  - `https://github.com/Chilled-watermelon/affordancebench-studio/archive/refs/tags/v0.1.2.zip`
 - 若有 demo video，则补 public page 链接

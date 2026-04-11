@@ -2,41 +2,62 @@
 
 ## Goal
 
-给评审一条 `2-3` 分钟内能看懂的最小演示路径，证明这不是一堆散乱脚本，而是一个可检查、可发现、可运行的软件项目。
+Provide a `60-90` second `simulation-first` demonstration path that helps reviewers understand the toolkit as software, without requiring robot hardware or a full benchmark deployment on the first pass.
 
 ## Recommended demo order
 
-### Local dry-run demo
+### Primary reviewer demo
 
-这条路径不依赖 GPU，也不要求本机有完整数据。
+Use:
+
+```bash
+bash examples/demo_simulation_reviewer_walkthrough.sh
+```
+
+This path bundles the following into one short walkthrough:
+
+1. clean-machine diagnostics
+2. unified command discovery
+3. LASO-oriented command inspection
+4. simulation-first dry-run resolution
+5. OpenAD-only profiling inspection
+6. pointers to validated smoke evidence
+
+### Generated demo assets
+
+To create the screenshots and silent animation assets used for reviewer-facing packaging:
+
+```bash
+bash submission/demo_assets/generate_simulation_demo_assets.sh
+```
+
+Generated files:
+
+- `submission/demo_assets/generated/scene01_env_check.png`
+- `submission/demo_assets/generated/scene02_command_discovery.png`
+- `submission/demo_assets/generated/scene03_laso_dryrun.png`
+- `submission/demo_assets/generated/scene04_profile_dryrun.png`
+- `submission/demo_assets/generated/scene05_validated_evidence.png`
+- `submission/demo_assets/generated/simulation_reviewer_demo.gif`
+- `submission/demo_assets/generated/simulation_reviewer_demo.mp4`
+
+### Local dry-run fallback
+
+If you want the older, narrower dry-run path:
 
 ```bash
 bash examples/demo_smoke_walkthrough.sh dry-run
 ```
 
-推荐展示点：
+### OpenAD-only fallback
 
-1. `affordbench env-check`
-2. `affordbench list`
-3. `affordbench describe laso-qaq`
-4. `affordbench laso-anchor-map --dry-run`
-5. `affordbench render-heatmap --dry-run`
-
-这条路径的价值在于：
-
-- 能快速展示 CLI 统一入口
-- 能展示 command registry 不是空壳
-- 能展示软件包的 discoverability
-
-### OpenAD-only smoke demo
-
-如果当前机器没有 LASO 数据，但有 OpenAD-style repo，可用：
+If the current machine has an OpenAD-style repository but not LASO data:
 
 ```bash
 bash examples/demo_openad_profile_walkthrough.sh dry-run
 ```
 
-如果切到真实 OpenAD 环境：
+For a real OpenAD environment:
 
 ```bash
 export OPENAD_BASE=/path/to/openad_repo
@@ -45,13 +66,13 @@ export PROFILE_CONFIG=config/openad_pn2/estimation_cfg.py
 bash examples/demo_openad_profile_walkthrough.sh real
 ```
 
-已验证的一条远端实跑参考见：
+Validated reference:
 
 - `submission/remote_openad_smoke_evidence_20260411.md`
 
-### Linux real demo
+### Remote Linux real path
 
-如果切到 Linux 主机，推荐用同一个脚本跑真实路径：
+For a heavier real execution path on Linux:
 
 ```bash
 export OPENAD_BASE=/path/to/Open-Vocabulary-Affordance-Detection-in-3D-Point-Clouds-main
@@ -61,37 +82,38 @@ export CHECKPOINT=log/tc_prior_run1/best_model.t7
 bash examples/demo_smoke_walkthrough.sh real
 ```
 
-已验证的远端实跑参考见：
+Validated references:
 
 - `submission/remote_openad_smoke_evidence_20260411.md`
 - `submission/remote_laso_heatmap_smoke_evidence_20260411.md`
 
-## Reviewer-facing narration
+## Suggested reviewer narration
 
-推荐口播或字幕按这个顺序：
-
-1. 这是一个 open-source toolkit，而不是另一篇方法稿的代码 dump。
-2. 我们先做环境检查，再列出所有模块化命令。
-3. 然后查看某个命令的 runner、脚本来源和示例。
-4. 接着展示一个 LASO workflow 和一个 figure workflow。
-5. 最后强调 buildability、documentation、public-safe release discipline。
+1. This is an open-source toolkit, not a raw code dump from a method paper.
+2. The first-pass review path is simulation-first and does not require robot hardware.
+3. Start with `env-check`, then show `list` and `describe`.
+4. Use dry-run resolution to expose what LASO and figure-generation commands actually execute.
+5. Show that an OpenAD-only profiling path also exists.
+6. Close with the real smoke evidence and public release links.
 
 ## Good evidence to capture
 
-如果你在正式 Linux/GPU 机器上补 smoke evidence，最值得截图或录屏的是：
+If you record or screenshot a formal demo, the most useful points are:
 
+- `affordbench env-check`
 - `affordbench list`
 - `affordbench describe laso-qaq`
-- `affordbench env-check`
 - `affordbench laso-anchor-map`
 - `affordbench laso-qaq`
 - `affordbench render-heatmap`
+- `affordbench describe profile-efficiency`
+- `affordbench profile-efficiency --dry-run -- ...`
 
 ## Public-safe reminder
 
-demo 中默认不要展示：
+The demo should avoid showing:
 
-- under-review 主稿 headline 数字
-- 主稿最终对比表
-- 私有 checkpoint 路径
-- 含作者身份信息但会造成双投歧义的页面文案
+- under-review headline numbers
+- final paper-facing comparison tables
+- private checkpoint paths
+- text that would create unnecessary overlap with a separate method-paper submission

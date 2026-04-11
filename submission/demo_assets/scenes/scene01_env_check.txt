@@ -1,0 +1,21 @@
+$ affordbench env-check
+AffordanceBench Studio Environment Check
+==========================================
+
+[OpenAD]
+[MISSING] OPENAD_BASE: <unset>
+[MISSING] OpenAD config: <unset>
+[MISSING] OpenAD test entry: <unset>
+[MISSING] openai_CLIP root: <unset>
+[MISSING] openai_CLIP module: <unset>
+
+[LASO]
+[MISSING] LASO_ROOT: <unset>
+[MISSING] LASO question csv: <unset>
+[MISSING] LASO anno_test.pkl: <unset>
+[MISSING] LASO objects_test.pkl: <unset>
+
+[Summary]
+OpenAD ready: no
+LASO ready: no
+Hint: export OPENAD_BASE and LASO_ROOT before running toolkit scripts.
