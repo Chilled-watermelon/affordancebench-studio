@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "affordancebench-studio"
+version = "0.1.0"
+description = "Open toolkit draft for query processing, evaluation, and visualization in 3D multimedia affordance research."
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [
+  { name = "Hao Jiang", email = "h-jiang24@mails.tsinghua.edu.cn" },
+  { name = "Kaiwen Deng", email = "dkw24@mails.tsinghua.edu.cn" },
+  { name = "Weihong Li", email = "li-wh24@mails.tsinghua.edu.cn" },
+  { name = "Jinhao Chen", email = "502024150012@smail.nju.edu.cn" },
+  { name = "Wenming Yang", email = "yang.wenming@sz.tsinghua.edu.cn" }
+]
+dependencies = []
+
+[project.scripts]
+affordbench = "affordbench.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "."}
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["affordbench*"]
+
+[tool.setuptools.package-data]
+affordbench = [
+  "legacy_scripts/*.py",
+  "legacy_scripts/*.sh",
+  "runtime_shims/*.py",
+]

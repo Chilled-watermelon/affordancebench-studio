@@ -1,0 +1,58 @@
+# Submission Package
+
+这个目录用于组织 ACM MM 2026 Open Source Software Track 的投稿包。
+
+当前建议至少包含：
+
+1. overview paper
+2. OpenReview checklist
+3. official requirements check
+4. build / install instructions
+5. demo suitability note
+6. public project page
+7. final fill-ins list
+
+## Current pointers
+
+- Open Source plan:
+  - `TC/索引/02_项目文档/docs/mm26_new_side_track_open_source_plan_20260409.md`
+- overview paper draft:
+  - `TC/写作/paper工程/paper/drafts/mm26_open_source_overview_paper_draft_20260410.md`
+- overview paper LaTeX draft:
+  - `TC/写作/paper工程/paper/drafts/mm26_open_source_overview_paper_v1_20260410.tex`
+- project page template:
+  - `submission/project_page_template.md`
+- demo walkthrough:
+  - `submission/demo_walkthrough.md`
+- review alignment:
+  - `submission/review_alignment.md`
+- acceptance maximization plan:
+  - `submission/acceptance_maximization_plan.md`
+- official requirements check:
+  - `submission/official_requirements_check.md`
+- GitHub homepage copy:
+  - `submission/github_homepage_copy.md`
+- final fill-ins:
+  - `submission/final_fill_ins.md`
+- smoke evidence template:
+  - `submission/smoke_evidence_template.md`
+- pdf visual check:
+  - `submission/pdf_visual_check_20260411.md`
+- source ZIP checklist:
+  - `submission/source_zip_checklist.md`
+- local dry-run evidence:
+  - `submission/local_dry_run_evidence_20260411.md`
+- remote OpenAD smoke evidence:
+  - `submission/remote_openad_smoke_evidence_20260411.md`
+- remote LASO + heatmap smoke evidence:
+  - `submission/remote_laso_heatmap_smoke_evidence_20260411.md`
+
+## Packaging goal
+
+评审在看到这个 repo 时，应该能快速确认：
+
+- 项目名清楚
+- 软件边界清楚
+- 安装方法清楚
+- 命令入口清楚
+- 不会和当前 under-review 主稿直接重叠
