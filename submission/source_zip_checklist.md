@@ -39,9 +39,9 @@ Planned public source ZIP URL:
 
 - `https://github.com/Chilled-watermelon/affordancebench-studio/archive/refs/tags/v0.1.0.zip`
 
-- [ ] ZIP 内 `README` 可独立理解
-- [ ] ZIP 内 `LICENSE` 存在
-- [ ] ZIP 内 `examples/demo_smoke_walkthrough.sh` 可见
-- [ ] ZIP 内没有权重和大数据
-- [ ] ZIP 内没有私有绝对路径说明
-- [ ] ZIP 内没有 secrets
+- [x] ZIP 内 `README` 可独立理解
+- [x] ZIP 内 `LICENSE` 存在
+- [x] ZIP 内 `examples/demo_smoke_walkthrough.sh` 可见
+- [x] ZIP 内没有权重和大数据
+- [x] ZIP 内没有私有绝对路径说明
+- [x] ZIP 内没有 secrets

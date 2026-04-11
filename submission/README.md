@@ -40,6 +40,8 @@
   - `submission/pdf_visual_check_20260411.md`
 - source ZIP checklist:
   - `submission/source_zip_checklist.md`
+- supplementary ZIP file list:
+  - `submission/supplementary_zip_file_list.md`
 - local dry-run evidence:
   - `submission/local_dry_run_evidence_20260411.md`
 - remote OpenAD smoke evidence:

@@ -30,6 +30,10 @@
 
 - public repo URL
   - `https://github.com/Chilled-watermelon/affordancebench-studio`
+- release URL
+  - `https://github.com/Chilled-watermelon/affordancebench-studio/releases/tag/v0.1.0`
+- overview paper PDF URL
+  - `https://github.com/Chilled-watermelon/affordancebench-studio/releases/download/v0.1.0/mm26_open_source_overview_paper_v1_20260410.pdf`
 - issue tracker URL
   - `https://github.com/Chilled-watermelon/affordancebench-studio/issues`
 
@@ -42,8 +46,7 @@
 
 ## Items still pending
 
-- overview paper URL or public PDF URL
-- final supplementary file list
+- supplementary ZIP 按 `submission/supplementary_zip_file_list.md` 打包并最终过一遍文件名
 
 ## Why this file exists
 

@@ -55,9 +55,13 @@
 
 - 实际项目 public URL
   - `https://github.com/Chilled-watermelon/affordancebench-studio`
+- release URL
+  - `https://github.com/Chilled-watermelon/affordancebench-studio/releases/tag/v0.1.0`
 - 作者姓名与单位
   - 已按桌面 `PPSN_CURRENT.tex` 的作者块对齐
 - overview paper 中的 public URL 行
+- overview paper PDF URL
+  - `https://github.com/Chilled-watermelon/affordancebench-studio/releases/download/v0.1.0/mm26_open_source_overview_paper_v1_20260410.pdf`
 - source zip 公开下载位置
   - `https://github.com/Chilled-watermelon/affordancebench-studio/archive/refs/tags/v0.1.0.zip`
 - 若有 demo video，则补 public page 链接

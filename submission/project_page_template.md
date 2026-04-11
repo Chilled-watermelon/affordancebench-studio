@@ -6,21 +6,31 @@ AffordanceBench Studio
 
 ## One-line summary
 
-An open toolkit for query processing, evaluation, visualization, profiling, and reproducibility-oriented workflows in 3D multimedia affordance research.
+An open, software-first toolkit for query processing, evaluation, visualization, profiling, and reproducibility workflows in 3D multimedia affordance research.
 
 ## Intro
 
-AffordanceBench Studio is a software-first toolkit that turns scattered research scripts into a more buildable and inspectable package. It organizes dataset-facing entrypoints, LASO/OpenAD-related workflows, evaluation helpers, figure generation, profiling utilities, and release-oriented reproducibility support behind a unified command-line interface.
+AffordanceBench Studio turns scattered research scripts into a more buildable, inspectable, and demo-ready software package. It organizes dataset-facing entrypoints, LASO/OpenAD-related workflows, evaluation helpers, figure generation, profiling utilities, and release-oriented reproducibility support behind a unified command-line interface.
 
-This project is positioned as an open-source software package, not as a second method paper. The goal is to make multimedia affordance research workflows easier to build, inspect, demo, and extend.
+This project is positioned as an open-source software package, not as a second method paper. The goal is to make multimedia affordance research workflows easier to build, inspect, demo, validate, and extend.
 
 ## Highlights
 
-- unified CLI with command discovery and dry-run inspection
-- OpenAD / LASO workflow support
-- evaluation, visualization, and profiling entrypoints
+- unified CLI with command discovery, metadata inspection, and dry-run resolution
+- OpenAD / LASO workflow support through a thicker legacy bridge
+- evaluation, visualization, profiling, and packaging entrypoints in one repo
 - environment validation for reproducibility-oriented setup
 - public-safe release discipline for open-source packaging
+- real smoke evidence for both OpenAD-only and LASO + figure-generation paths
+
+## Why this page matters
+
+The software package is designed to answer the first questions a reviewer or external user will ask:
+
+1. Can I install it?
+2. Can I understand what commands exist?
+3. Can I validate the environment before running heavy workflows?
+4. Can I see evidence that it runs outside the authors' main workstation?
 
 ## Quickstart
 
@@ -36,10 +46,14 @@ affordbench list
 affordbench describe laso-qaq
 ```
 
-## One-minute demo
+## One-minute reviewer path
 
 ```bash
+affordbench env-check
+affordbench list
+affordbench describe laso-qaq
 bash examples/demo_smoke_walkthrough.sh dry-run
+bash examples/demo_openad_profile_walkthrough.sh dry-run
 ```
 
 This demo path shows:
@@ -48,6 +62,14 @@ This demo path shows:
 2. command discovery
 3. command introspection
 4. dry-run workflow resolution
+5. both LASO-facing and OpenAD-only public entrypoints
+
+## Validation evidence
+
+- local dry-run evidence: `submission/local_dry_run_evidence_20260411.md`
+- remote OpenAD smoke evidence: `submission/remote_openad_smoke_evidence_20260411.md`
+- remote LASO + heatmap smoke evidence: `submission/remote_laso_heatmap_smoke_evidence_20260411.md`
+- PDF layout check: `submission/pdf_visual_check_20260411.md`
 
 ## Who this is for
 
@@ -62,8 +84,10 @@ This project page should describe the toolkit itself. It should not claim to rel
 ## Links
 
 - code: `https://github.com/Chilled-watermelon/affordancebench-studio`
+- release: `https://github.com/Chilled-watermelon/affordancebench-studio/releases/tag/v0.1.0`
 - source zip: `https://github.com/Chilled-watermelon/affordancebench-studio/archive/refs/tags/v0.1.0.zip`
 - docs: `docs/`
-- overview paper: to be linked on the public project page once the submission PDF can be exposed
+- overview paper: `https://github.com/Chilled-watermelon/affordancebench-studio/releases/download/v0.1.0/mm26_open_source_overview_paper_v1_20260410.pdf`
 - demo walkthrough: `submission/demo_walkthrough.md`
+- smoke evidence: `submission/remote_laso_heatmap_smoke_evidence_20260411.md`
 - license: `LICENSE`

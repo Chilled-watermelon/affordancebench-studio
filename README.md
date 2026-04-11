@@ -1,93 +1,141 @@
-# AffordanceBench Studio
+<div align="center">
+  <h1>AffordanceBench Studio</h1>
+  <p><strong>Open toolkit for query processing, evaluation, visualization, profiling, and reproducibility workflows in 3D multimedia affordance research.</strong></p>
+  <p>
+    <a href="https://github.com/Chilled-watermelon/affordancebench-studio/releases/tag/v0.1.0"><img alt="release" src="https://img.shields.io/github/v/release/Chilled-watermelon/affordancebench-studio?label=release"></a>
+    <a href="./LICENSE"><img alt="license" src="https://img.shields.io/badge/license-MIT-blue.svg"></a>
+    <img alt="python" src="https://img.shields.io/badge/python-%3E%3D3.9-informational">
+    <a href="https://github.com/Chilled-watermelon/affordancebench-studio/releases/download/v0.1.0/mm26_open_source_overview_paper_v1_20260410.pdf"><img alt="overview paper" src="https://img.shields.io/badge/overview%20paper-PDF-red"></a>
+    <a href="https://github.com/Chilled-watermelon/affordancebench-studio/archive/refs/tags/v0.1.0.zip"><img alt="source zip" src="https://img.shields.io/badge/source%20zip-v0.1.0-success"></a>
+  </p>
+  <p>
+    <a href="#quickstart">Quickstart</a> •
+    <a href="#reviewer-friendly-path">Reviewer Path</a> •
+    <a href="#command-families">Command Families</a> •
+    <a href="#validation-evidence">Validation Evidence</a> •
+    <a href="#documentation">Documentation</a>
+  </p>
+</div>
 
-`AffordanceBench Studio` 是一个面向 3D 多媒体可供性研究的 toolkit 骨架。  
-它把当前分散的训练、评测、LASO/OpenAD 适配、可视化和环境检查脚本收成一个更像软件项目的入口，目标是提升：
+## What This Repository Is
 
-- buildability
-- usability
-- reproducibility
-- ACM MM Open Source Track 的投稿完成度
+AffordanceBench Studio turns scattered research scripts into a software-first package that is easier to build, inspect, demo, and extend. Instead of requiring users to navigate fragile private paths, ad hoc shell snippets, and benchmark-specific conventions, the toolkit exposes a unified CLI, command discovery, environment checks, evaluation helpers, visualization utilities, profiling entrypoints, and release-oriented reproducibility support.
 
-## 当前定位
+This repository is positioned as an open software package, not as a second method paper. The public release is intentionally scoped toward buildability, compatibility, command discoverability, and review-friendly workflow packaging.
 
-这不是第二篇方法论文。  
-当前骨架的目标是把研究工程整理成一个**可公开、可构建、可包装投稿**的软件项目。
+## Why It Is Reviewer-Friendly
 
-当前主打：
+| Need | What the toolkit provides |
+| --- | --- |
+| Fast first inspection | `affordbench list`, `affordbench describe <command>`, and `--dry-run` command resolution |
+| Buildability | `pyproject.toml`, `requirements.txt`, `Dockerfile`, and an installable CLI entrypoint |
+| Legacy compatibility | A public-facing CLI layered over packaged legacy Python and shell workflows |
+| Environment safety | Explicit `OPENAD_BASE`, `LASO_ROOT`, `OPENAI_CLIP_ROOT`, and path resolution helpers |
+| Compatibility on imperfect machines | `openai_CLIP` auto-discovery and a pure PyTorch `torch_cluster.fps` fallback for smoke validation |
+| Public-safe release discipline | No bundled secrets, no large datasets, no under-review checkpoints, and no paper-facing final figures by default |
 
-- 统一 CLI
-- OpenAD / LASO 相关入口
-- 训练 / 评测 / 可视化 command registry
-- quickstart / architecture / submission docs
-
-当前刻意不默认公开：
-
-- under-review 主稿完整权重
-- 当前主稿 paper-facing 主结果
-- 会直接造成双投歧义的主稿叙事
-
-## 快速开始
-
-### 1. 安装
+## Quickstart
 
 ```bash
 pip install -r requirements.txt
 pip install -e .
-```
 
-### 2. 设置环境变量
-
-```bash
 export OPENAD_BASE=/path/to/Open-Vocabulary-Affordance-Detection-in-3D-Point-Clouds-main
 export LASO_ROOT=/path/to/LASO_dataset
-```
 
-### 3. 先做环境检查
-
-```bash
 affordbench env-check
-```
-
-### 4. 查看可用命令
-
-```bash
 affordbench list
-```
-
-### 5. 查看单个命令说明
-
-```bash
 affordbench describe laso-qaq
 ```
 
-### 6. 运行一个 LASO 命令
+To run a minimal LASO-facing path:
 
 ```bash
-affordbench laso-qaq -- --checkpoint log/tc_prior_run1/best_model.t7
+affordbench laso-anchor-map -- --out "$LASO_ROOT/laso_anchor_map.json"
+
+affordbench laso-qaq -- \
+  --openad_base "$OPENAD_BASE" \
+  --laso_root "$LASO_ROOT" \
+  --checkpoint log/tc_prior_run1/best_model.t7
 ```
 
-### 7. 跑一条最小 demo 路径
+If you only have an OpenAD-style repository and want the lightest possible smoke path:
 
 ```bash
+affordbench env-check -- --mode openad
+
+affordbench profile-efficiency -- \
+  --config config/openad_pn2/full_shape_cfg.py \
+  --device cpu
+```
+
+## Reviewer-Friendly Path
+
+For a quick third-party inspection, the recommended order is:
+
+```bash
+affordbench env-check
+affordbench list
+affordbench describe laso-qaq
 bash examples/demo_smoke_walkthrough.sh dry-run
-```
-
-### 8. 跑一条不依赖 LASO 的 OpenAD smoke 路径
-
-```bash
 bash examples/demo_openad_profile_walkthrough.sh dry-run
 ```
 
-如果 `clip` 不是通过 pip 安装，而是旁路在 `openai_CLIP/` 仓中，`affordbench` 会优先自动发现：
+This path demonstrates:
+
+1. environment validation before heavyweight execution
+2. command discovery through a single public CLI
+3. dry-run inspection of legacy-bridge resolution
+4. both LASO-facing and OpenAD-only smoke entrypoints
+
+## Command Families
+
+| Family | Representative commands | Purpose |
+| --- | --- | --- |
+| Setup | `env-check`, `list`, `describe` | Validate environment, inspect command metadata, and resolve workflows before running them |
+| Train | `train-tc`, `train-prompt` | Launch training-oriented legacy workflows through the same public CLI |
+| Evaluation | `eval-risk`, `eval-ablation`, `eval-boundary`, `eval-interaction-proxy`, `macc-compare` | Run benchmark-style evaluation and comparison utilities |
+| LASO | `laso-anchor-map`, `laso-qaq`, `laso-zeroshot`, `laso-translate`, `laso-eval-translated` | Support query-conditioned LASO workflows and prompt processing |
+| Visualization | `render-heatmap`, `visualize-tsne`, `render-failure-cases`, `plot-sensitivity` | Export interpretable artifacts for inspection, demos, and reports |
+| Profiling / Ops | `profile-efficiency`, `profile-stage-breakdown`, `generate-backup-manifest`, `package-backup-assets` | Measure efficiency and make release packaging easier |
+
+## Validation Evidence
+
+The repository already includes review-facing evidence instead of only raw scripts:
+
+- local dry-run evidence: `submission/local_dry_run_evidence_20260411.md`
+- remote OpenAD-only smoke evidence: `submission/remote_openad_smoke_evidence_20260411.md`
+- remote LASO + render-heatmap smoke evidence: `submission/remote_laso_heatmap_smoke_evidence_20260411.md`
+- PDF layout and page-count check: `submission/pdf_visual_check_20260411.md`
+
+## Release Artifacts
+
+- public repository: [Chilled-watermelon/affordancebench-studio](https://github.com/Chilled-watermelon/affordancebench-studio)
+- release page: [v0.1.0](https://github.com/Chilled-watermelon/affordancebench-studio/releases/tag/v0.1.0)
+- source ZIP: [download v0.1.0](https://github.com/Chilled-watermelon/affordancebench-studio/archive/refs/tags/v0.1.0.zip)
+- overview paper PDF: [release asset](https://github.com/Chilled-watermelon/affordancebench-studio/releases/download/v0.1.0/mm26_open_source_overview_paper_v1_20260410.pdf)
+
+## Compatibility Notes
+
+If `clip` is not installed from pip but exists in a local `openai_CLIP/` checkout, `affordbench` will try the following locations automatically:
 
 - `$OPENAI_CLIP_ROOT`
 - `$OPENAD_BASE/openai_CLIP`
 - `$(dirname "$OPENAD_BASE")/openai_CLIP`
 - `$(dirname "$(dirname "$OPENAD_BASE")")/openai_CLIP`
 
-对于 reviewer 机器上常见的 `torch_cluster` 缺失，toolkit 也自带了仅用于 smoke/buildability 的纯 PyTorch fallback，不要求先编译 PyG 扩展。
+For reviewer machines that do not have `torch_cluster` prebuilt, the toolkit also includes a pure PyTorch fallback for `torch_cluster.fps`. It is meant for smoke validation and buildability checks rather than for replacing a full benchmark environment.
 
-## 目录结构
+## What Is Not Bundled By Default
+
+To keep the public package clean and safe to review, this release does not ship:
+
+- large benchmark datasets
+- under-review main-paper checkpoints
+- paper-facing final figures from the under-review main submission
+- secret-bearing config files or private service tokens
+
+## Repository Layout
 
 ```text
 affordancebench_studio/
@@ -105,75 +153,22 @@ affordancebench_studio/
 └── requirements.txt
 ```
 
-## 命令分层
+## Documentation
 
-当前 CLI 采用“公开主骨架 + legacy bridge”的方式：
+- quickstart: `docs/quickstart.md`
+- architecture: `docs/architecture.md`
+- command reference: `docs/command_reference.md`
+- reproducibility notes: `docs/reproducibility.md`
+- extending the bridge: `docs/extending_bridge.md`
+- examples: `examples/README.md`
+- submission package: `submission/README.md`
 
-- 公开主骨架负责：
-  - 命令发现
-  - 参数入口统一
-  - 路径组织
-  - 文档
-- legacy bridge 负责：
-  - 映射到 repo 内打包的 legacy scripts
-  - 兼容 OpenAD / LASO 风格实验工程
+## Current Status
 
-这能在不大重写旧代码的前提下，尽快得到一个可投稿的软件仓库形态。
+This is still an early public release, but it already provides the layers that matter most for software review:
 
-## 核心命令
-
-- `affordbench env-check`
-- `affordbench describe <command>`
-- `affordbench train-tc`
-- `affordbench train-prompt`
-- `affordbench eval-risk`
-- `affordbench eval-ablation`
-- `affordbench eval-boundary`
-- `affordbench eval-interaction-proxy`
-- `affordbench rerun-ablation`
-- `affordbench laso-qaq`
-- `affordbench laso-zeroshot`
-- `affordbench laso-translate`
-- `affordbench laso-anchor-map`
-- `affordbench laso-eval-translated`
-- `affordbench extract-priors`
-- `affordbench preprocess-priors`
-- `affordbench macc-compare`
-- `affordbench render-heatmap`
-- `affordbench render-failure-cases`
-- `affordbench visualize-tsne`
-- `affordbench plot-sensitivity`
-- `affordbench profile-efficiency`
-- `affordbench profile-stage-breakdown`
-- `affordbench generate-backup-manifest`
-- `affordbench gdrive-download`
-- `affordbench gdrive-resume`
-- `affordbench run-figures-gpu3`
-- `affordbench run-dgcnn-seeds`
-- `affordbench eval-dgcnn-package`
-- `affordbench package-backup-assets`
-
-## 文档
-
-- `docs/quickstart.md`
-- `docs/architecture.md`
-- `docs/command_reference.md`
-- `docs/reproducibility.md`
-- `docs/extending_bridge.md`
-- `examples/README.md`
-- `submission/README.md`
-- `submission/openreview_checklist.md`
-- `submission/review_alignment.md`
-- `submission/demo_walkthrough.md`
-- `submission/official_requirements_check.md`
-- `submission/github_homepage_copy.md`
-
-## 当前状态
-
-这还是第一版骨架，但已经具备 Open Source 投稿最关键的几层：
-
-1. 有独立项目名
-2. 有统一 CLI
-3. 有文档与投稿包目录
-4. 有 Docker / requirements / pyproject / LICENSE
-5. 有与现有研究代码兼容的厚桥接层
+1. a standalone project identity
+2. a unified CLI over a thicker legacy bridge
+3. install, docs, and release metadata
+4. smoke evidence for both OpenAD-only and LASO-facing paths
+5. a public-safe packaging discipline for open-source release
