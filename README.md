@@ -2,11 +2,11 @@
   <h1>AffordanceBench Studio</h1>
   <p><strong>Open toolkit for query processing, evaluation, visualization, profiling, and reproducibility workflows in 3D multimedia affordance research.</strong></p>
   <p>
-    <a href="https://github.com/Chilled-watermelon/affordancebench-studio/releases/tag/v0.1.0"><img alt="release" src="https://img.shields.io/github/v/release/Chilled-watermelon/affordancebench-studio?label=release"></a>
+    <a href="https://github.com/Chilled-watermelon/affordancebench-studio/releases/tag/v0.1.1"><img alt="release" src="https://img.shields.io/github/v/release/Chilled-watermelon/affordancebench-studio?label=release"></a>
     <a href="./LICENSE"><img alt="license" src="https://img.shields.io/badge/license-MIT-blue.svg"></a>
     <img alt="python" src="https://img.shields.io/badge/python-%3E%3D3.9-informational">
-    <a href="https://github.com/Chilled-watermelon/affordancebench-studio/releases/download/v0.1.0/mm26_open_source_overview_paper_v1_20260410.pdf"><img alt="overview paper" src="https://img.shields.io/badge/overview%20paper-PDF-red"></a>
-    <a href="https://github.com/Chilled-watermelon/affordancebench-studio/archive/refs/tags/v0.1.0.zip"><img alt="source zip" src="https://img.shields.io/badge/source%20zip-v0.1.0-success"></a>
+    <a href="https://github.com/Chilled-watermelon/affordancebench-studio/releases/download/v0.1.1/mm26_open_source_overview_paper_v1_20260410.pdf"><img alt="overview paper" src="https://img.shields.io/badge/overview%20paper-PDF-red"></a>
+    <a href="https://github.com/Chilled-watermelon/affordancebench-studio/archive/refs/tags/v0.1.1.zip"><img alt="source zip" src="https://img.shields.io/badge/source%20zip-v0.1.1-success"></a>
   </p>
   <p>
     <a href="#quickstart">Quickstart</a> •
@@ -111,9 +111,9 @@ The repository already includes review-facing evidence instead of only raw scrip
 ## Release Artifacts
 
 - public repository: [Chilled-watermelon/affordancebench-studio](https://github.com/Chilled-watermelon/affordancebench-studio)
-- release page: [v0.1.0](https://github.com/Chilled-watermelon/affordancebench-studio/releases/tag/v0.1.0)
-- source ZIP: [download v0.1.0](https://github.com/Chilled-watermelon/affordancebench-studio/archive/refs/tags/v0.1.0.zip)
-- overview paper PDF: [release asset](https://github.com/Chilled-watermelon/affordancebench-studio/releases/download/v0.1.0/mm26_open_source_overview_paper_v1_20260410.pdf)
+- release page: [v0.1.1](https://github.com/Chilled-watermelon/affordancebench-studio/releases/tag/v0.1.1)
+- source ZIP: [download v0.1.1](https://github.com/Chilled-watermelon/affordancebench-studio/archive/refs/tags/v0.1.1.zip)
+- overview paper PDF: [release asset](https://github.com/Chilled-watermelon/affordancebench-studio/releases/download/v0.1.1/mm26_open_source_overview_paper_v1_20260410.pdf)
 
 ## Compatibility Notes
 

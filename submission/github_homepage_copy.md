@@ -14,7 +14,7 @@ AffordanceBench Studio organizes LASO/OpenAD adapters, training, evaluation, vis
 
 ## Suggested homepage / website field
 
-`https://github.com/Chilled-watermelon/affordancebench-studio/releases/tag/v0.1.0`
+`https://github.com/Chilled-watermelon/affordancebench-studio/releases/tag/v0.1.1`
 
 ## Suggested topics
 

@@ -35,9 +35,9 @@
 ## Public links to mention inside the ZIP
 
 - repo: `https://github.com/Chilled-watermelon/affordancebench-studio`
-- release: `https://github.com/Chilled-watermelon/affordancebench-studio/releases/tag/v0.1.0`
-- source ZIP: `https://github.com/Chilled-watermelon/affordancebench-studio/archive/refs/tags/v0.1.0.zip`
-- overview paper PDF: `https://github.com/Chilled-watermelon/affordancebench-studio/releases/download/v0.1.0/mm26_open_source_overview_paper_v1_20260410.pdf`
+- release: `https://github.com/Chilled-watermelon/affordancebench-studio/releases/tag/v0.1.1`
+- source ZIP: `https://github.com/Chilled-watermelon/affordancebench-studio/archive/refs/tags/v0.1.1.zip`
+- overview paper PDF: `https://github.com/Chilled-watermelon/affordancebench-studio/releases/download/v0.1.1/mm26_open_source_overview_paper_v1_20260410.pdf`
 
 ## Final packaging note
 

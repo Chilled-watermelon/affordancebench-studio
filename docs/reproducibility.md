@@ -50,4 +50,4 @@
 - 不在 examples 中默认分发主稿权重
 - 所有命令都优先通过环境变量和显式参数配置
 - 当前公开仓库 URL：`https://github.com/Chilled-watermelon/affordancebench-studio`
-- 当前 source ZIP URL：`https://github.com/Chilled-watermelon/affordancebench-studio/archive/refs/tags/v0.1.0.zip`
+- 当前 source ZIP URL：`https://github.com/Chilled-watermelon/affordancebench-studio/archive/refs/tags/v0.1.1.zip`
