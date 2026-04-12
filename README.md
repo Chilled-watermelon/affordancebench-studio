@@ -99,7 +99,7 @@ bash submission/demo_assets/generate_simulation_demo_assets.sh
 The repository now also includes a compact reviewer-facing gallery of software outputs and evidence cards:
 
 ```bash
-/usr/bin/python3 submission/output_gallery/generate_output_gallery_assets.py
+python3 submission/output_gallery/generate_output_gallery_assets.py
 ```
 
 <img src="submission/output_gallery/generated/reviewer_output_gallery.png" alt="Reviewer-facing output gallery for AffordanceBench Studio" width="900">
@@ -108,9 +108,9 @@ This gallery combines:
 
 1. environment-check and dry-run inspection cards
 2. a real anchor-map JSON preview generated through the CLI
-3. a real sensitivity figure generated through the CLI
-4. a real profiling summary derived from the remote smoke
-5. a heatmap evidence card that proves figure generation without copying an under-review paper figure directly into the OSS package
+3. a real backup-manifest preview generated through the CLI
+4. a heatmap evidence card derived from the remote LASO smoke
+5. a real profiling summary derived from the remote OpenAD smoke
 
 ## Command Families
 
@@ -129,6 +129,8 @@ The repository already includes review-facing evidence instead of only raw scrip
 
 - public Linux smoke CI: `.github/workflows/linux-smoke.yml`
 - local dry-run evidence: `submission/local_dry_run_evidence_20260411.md`
+- clean virtualenv install evidence: `submission/clean_venv_build_evidence_20260411.md`
+- fresh public-main clone install evidence: `submission/public_main_fresh_clone_build_evidence_20260412.md`
 - remote OpenAD-only smoke evidence: `submission/remote_openad_smoke_evidence_20260411.md`
 - remote LASO + render-heatmap smoke evidence: `submission/remote_laso_heatmap_smoke_evidence_20260411.md`
 - public source-ZIP install evidence: `submission/source_zip_build_evidence_20260411.md`
@@ -197,7 +199,7 @@ affordancebench_studio/
 
 ## Current Status
 
-This is still an early public release, but it already provides the layers that matter most for software review:
+This release already provides the layers that matter most for software review:
 
 1. a standalone project identity
 2. a unified CLI over a thicker legacy bridge

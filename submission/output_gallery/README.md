@@ -10,7 +10,6 @@ This gallery therefore combines:
 
 - command-inspection cards from the simulation-first demo
 - a real anchor-map JSON preview generated through the CLI
-- a real sensitivity-curve figure generated through the CLI
 - a real backup-manifest preview generated through the CLI
 - a heatmap evidence card derived from the remote figure smoke
 - a profiling summary card derived from the remote OpenAD smoke
@@ -31,4 +30,5 @@ Generated files appear in:
 - `submission/output_gallery/generated/backup_manifest_preview.png`
 - `submission/output_gallery/generated/heatmap_evidence.png`
 - `submission/output_gallery/generated/profile_summary.png`
+- `submission/output_gallery/generated/output_evidence_composite.png`
 - `submission/output_gallery/generated/reviewer_output_gallery.png`

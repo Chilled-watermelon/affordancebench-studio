@@ -354,7 +354,7 @@ def build_contact_sheet() -> None:
         ("Environment check", DEMO_ROOT / "scene01_env_check.png"),
         ("Dry-run resolution", DEMO_ROOT / "scene03_laso_dryrun.png"),
         ("Anchor-map output", OUT_ROOT / "anchor_map_preview.png"),
-        ("Sensitivity figure", OUT_ROOT / "sensitivity_curves_smoke.png"),
+        ("Backup manifest", OUT_ROOT / "backup_manifest_preview.png"),
         ("Heatmap evidence", OUT_ROOT / "heatmap_evidence.png"),
         ("Profiling summary", OUT_ROOT / "profile_summary.png"),
     ]
@@ -370,6 +370,27 @@ def build_contact_sheet() -> None:
     plt.close(fig)
 
 
+def build_output_evidence_composite() -> None:
+    fig = plt.figure(figsize=(16, 10), facecolor="#f8fafc")
+    grid = fig.add_gridspec(2, 2, width_ratios=[1.2, 1.0], height_ratios=[1, 1])
+
+    placements = [
+        (grid[:, 0], OUT_ROOT / "heatmap_evidence.png"),
+        (grid[0, 1], OUT_ROOT / "backup_manifest_preview.png"),
+        (grid[1, 1], OUT_ROOT / "profile_summary.png"),
+    ]
+
+    for slot, path in placements:
+        ax = fig.add_subplot(slot)
+        image = mpimg.imread(path)
+        ax.imshow(image)
+        ax.axis("off")
+
+    plt.subplots_adjust(left=0.02, right=0.98, top=0.98, bottom=0.02, wspace=0.04, hspace=0.04)
+    fig.savefig(OUT_ROOT / "output_evidence_composite.png", dpi=180, bbox_inches="tight")
+    plt.close(fig)
+
+
 def main() -> None:
     OUT_ROOT.mkdir(parents=True, exist_ok=True)
     build_anchor_preview()
@@ -378,6 +399,7 @@ def main() -> None:
     build_heatmap_evidence_card()
     build_profile_summary_card()
     build_contact_sheet()
+    build_output_evidence_composite()
     print(f"Generated output gallery assets in: {OUT_ROOT}")
 
 

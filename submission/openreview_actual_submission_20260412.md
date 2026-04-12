@@ -22,7 +22,9 @@ From the signed-in submission flow on `2026-04-12`:
 - title:
   - `AffordanceBench Studio: An Open Toolkit for Query Processing, Evaluation, and Visualization in 3D Multimedia Affordance Research`
 - uploaded PDF:
-  - `TC/写作/paper工程/paper/drafts/mm26_open_source_overview_paper_v1_20260410.pdf`
+  - `submission/final_assets/mm26_open_source_overview_paper_v1_20260410.pdf`
+- public release asset:
+  - `https://github.com/Chilled-watermelon/affordancebench-studio/releases/download/v0.1.2/mm26_open_source_overview_paper_v1_20260410.pdf`
 
 ## Practical implication
 

@@ -55,15 +55,16 @@ This gallery is intentionally software-facing rather than paper-facing. It combi
 
 - environment-check and dry-run inspection cards
 - a real anchor-map JSON preview generated through the CLI
-- a real sensitivity figure generated through the CLI
-- a remote profiling summary card
-- a heatmap evidence card that proves figure generation without copying an under-review paper figure directly into the OSS package
+- a real backup-manifest preview generated through the CLI
+- a heatmap evidence card derived from the remote LASO smoke
+- a remote profiling summary card derived from the OpenAD smoke
 
 ## Validation Evidence
 
 - local dry-run coherence: [`submission/local_dry_run_evidence_20260411.md`](../submission/local_dry_run_evidence_20260411.md)
 - clean virtualenv installability: [`submission/clean_venv_build_evidence_20260411.md`](../submission/clean_venv_build_evidence_20260411.md)
 - fresh public-main clone installability: [`submission/public_main_fresh_clone_build_evidence_20260412.md`](../submission/public_main_fresh_clone_build_evidence_20260412.md)
+- source-ZIP installability: [`submission/source_zip_build_evidence_20260411.md`](../submission/source_zip_build_evidence_20260411.md)
 - remote OpenAD smoke: [`submission/remote_openad_smoke_evidence_20260411.md`](../submission/remote_openad_smoke_evidence_20260411.md)
 - remote LASO + heatmap smoke: [`submission/remote_laso_heatmap_smoke_evidence_20260411.md`](../submission/remote_laso_heatmap_smoke_evidence_20260411.md)
 - paper layout check: [`submission/pdf_visual_check_20260411.md`](../submission/pdf_visual_check_20260411.md)

@@ -13,9 +13,14 @@
 ## Final paper artifact
 
 - local PDF:
-  - `TC/写作/paper工程/paper/drafts/mm26_open_source_overview_paper_v1_20260410.pdf`
+  - `submission/final_assets/mm26_open_source_overview_paper_v1_20260410.pdf`
 - page count:
   - `4`
+- frozen page images:
+  - `submission/final_assets/pdf_pages/mm26_open_source_overview_paper_v1_20260410-01.png`
+  - `submission/final_assets/pdf_pages/mm26_open_source_overview_paper_v1_20260410-02.png`
+  - `submission/final_assets/pdf_pages/mm26_open_source_overview_paper_v1_20260410-03.png`
+  - `submission/final_assets/pdf_pages/mm26_open_source_overview_paper_v1_20260410-04.png`
 - public overview PDF target:
   - `https://github.com/Chilled-watermelon/affordancebench-studio/releases/download/v0.1.2/mm26_open_source_overview_paper_v1_20260410.pdf`
 
