@@ -96,8 +96,10 @@ Current evidence:
 - `pyproject.toml`
 - local dry-run evidence
 - clean-venv build evidence
+- public-main fresh-clone build evidence
 - source-ZIP build evidence
 - OpenReview public entry check
+- OpenReview actual submission check
 - remote OpenAD smoke evidence
 - remote LASO + heatmap smoke evidence
 
@@ -115,6 +117,7 @@ Current evidence:
 - pure PyTorch fallback for `torch_cluster.fps`
 - CPU-safe OpenAD profiling and Linux remote smoke evidence
 - fresh virtual-environment install evidence
+- fresh public-main clone evidence
 
 Reviewer takeaway:
 

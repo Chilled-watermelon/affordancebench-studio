@@ -94,13 +94,10 @@ The official Open Source call explicitly states:
 
 This resolves the submission-policy ambiguity in favor of including author metadata in the overview PDF.
 
-## Remaining manual step
+## Follow-up
 
-One final signed-in rehearsal is still recommended before pressing submit, but the submission-side risk is now much narrower:
+This public-entry check was later completed by a signed-in actual submission on `2026-04-12`:
 
-- the public venue page was verified
-- the login gate was verified
-- the invitation id was extracted from the live React page
-- the live `api2` submission invitation schema was inspected directly
-
-The remaining signed-in task is mainly a final UI-level confirmation that the upload flow matches the invitation schema and does not reveal any venue-side extra field that is hidden from the public API snapshot.
+- the signed-in live form matched the earlier invitation-schema inspection
+- no extra supplementary ZIP or public-URL field appeared in the real form
+- the resulting note state is recorded in `submission/openreview_actual_submission_20260412.md`

@@ -60,10 +60,14 @@
   - `submission/local_dry_run_evidence_20260411.md`
 - clean venv build evidence:
   - `submission/clean_venv_build_evidence_20260411.md`
+- public-main fresh-clone build evidence:
+  - `submission/public_main_fresh_clone_build_evidence_20260412.md`
 - source ZIP build evidence:
   - `submission/source_zip_build_evidence_20260411.md`
 - OpenReview public entry check:
   - `submission/openreview_public_entry_check_20260411.md`
+- OpenReview actual submission check:
+  - `submission/openreview_actual_submission_20260412.md`
 - remote OpenAD smoke evidence:
   - `submission/remote_openad_smoke_evidence_20260411.md`
 - remote LASO + heatmap smoke evidence:

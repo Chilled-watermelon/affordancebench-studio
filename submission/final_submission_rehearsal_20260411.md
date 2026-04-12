@@ -61,6 +61,8 @@
   - `submission/local_dry_run_evidence_20260411.md`
 - clean installability:
   - `submission/clean_venv_build_evidence_20260411.md`
+- public-main fresh-clone installability:
+  - `submission/public_main_fresh_clone_build_evidence_20260412.md`
 - public source-ZIP installability:
   - `submission/source_zip_build_evidence_20260411.md`
 - remote OpenAD smoke:
@@ -69,6 +71,8 @@
   - `submission/remote_laso_heatmap_smoke_evidence_20260411.md`
 - OpenReview public entry check:
   - `submission/openreview_public_entry_check_20260411.md`
+- OpenReview actual submission check:
+  - `submission/openreview_actual_submission_20260412.md`
 - OpenReview screenshots:
   - `submission/openreview_track_page_20260411.png`
   - `submission/openreview_login_page_20260411.png`
@@ -80,17 +84,27 @@
 ## OpenReview rehearsal checklist
 
 1. upload the `4`-page overview PDF
-2. upload the supplementary ZIP
+2. if the live form exposes a supplementary ZIP field, upload the final ZIP; otherwise keep the supplementary bundle in the public release assets
 3. ensure author order matches the PDF exactly
-4. set the project URL to the public project page
-5. set the source ZIP URL to the `v0.1.2` archive
-6. if OpenReview exposes an additional repository URL or software URL field, use the public repository or the `v0.1.2` release page as appropriate
+4. if OpenReview exposes an additional project or software URL field, use the public project page
+5. if OpenReview exposes an additional source-archive field, use the `v0.1.2` source ZIP URL
+6. if OpenReview exposes an additional repository URL field, use the public repository or the `v0.1.2` release page as appropriate
 7. if the signed-in form still shows `Jul 16 2026` as the submission deadline, capture that mismatch and consider contacting the OSS chairs before relying on it
 
-## Remaining manual action at actual submission time
+## Actual signed-in submission result
 
-- verify every co-author's OpenReview profile is complete
-- inspect the live OpenReview form fields one more time before pressing submit
-- confirm the uploaded supplementary ZIP matches the final local file
-- note: the public OpenReview track URL and login gate were verified directly in-browser; the real form-side upload check still requires a signed-in session
-- note: the live `api2` submission invitation schema was also inspected and currently exposes `title`, `authors`, `authorids`, `keywords`, `TLDR`, `abstract`, and `pdf`, but no separate public `supplementary ZIP` / `project URL` / `source ZIP URL` field
+- submission date:
+  - `2026-04-12`
+- actual note URL:
+  - `https://openreview.net/forum?noteId=cjWBvEOs3S`
+- actual note id:
+  - `cjWBvEOs3S`
+- signed-in form fields matched the earlier `api2` schema inspection:
+  - `title`, `authors`, `authorids`, `keywords`, `TLDR`, `abstract`, `pdf`
+- no separate supplementary ZIP / project URL / source ZIP URL / repository URL field was exposed in the live form
+- the signed-in submission surface still showed `Jul 16 2026 11:59PM UTC-0` as the deadline string
+
+## Remaining follow-up after actual submission
+
+- keep the local supplementary ZIP aligned with the already submitted overview PDF and the public `v0.1.2` release assets
+- if the deadline mismatch still seems risky, consider contacting the OSS chairs for clarification even though the signed-in form allowed submission

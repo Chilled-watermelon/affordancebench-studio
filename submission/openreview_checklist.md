@@ -35,7 +35,7 @@ Note:
 - screenshots, invitation id, and `api2` schema notes are stored in `submission/openreview_public_entry_check_20260411.md`
 - official ACM MM pages still say `May 28, 2026` submission / `July 16, 2026` notification
 - the public OpenReview track page currently shows `Jul 16 2026 11:59PM UTC-0` as the submission deadline, which appears inconsistent
-- one last signed-in UI-level confirmation is still recommended, but the field schema itself has already been inspected from the live `api2` invitation
+- the signed-in form and actual submitted note were recorded in `submission/openreview_actual_submission_20260412.md`
 
 ## Overlap-risk control
 

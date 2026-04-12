@@ -88,3 +88,4 @@ export OPENAI_CLIP_ROOT=/path/to/openai_CLIP
 可参考的 clean-environment 安装证据见：
 
 - `submission/clean_venv_build_evidence_20260411.md`
+- `submission/public_main_fresh_clone_build_evidence_20260412.md`

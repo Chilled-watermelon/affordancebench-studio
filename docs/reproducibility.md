@@ -50,6 +50,24 @@ The workflow validates:
 
 - `submission/clean_venv_build_evidence_20260411.md`
 
+### Fresh public-main clone smoke
+
+如果想进一步证明公开仓库本身可以从零 clone 后直接检查，可走：
+
+1. `git clone --depth 1 <public_repo_url> <fresh_clone_dir>`
+2. `cd <fresh_clone_dir>`
+3. `python3 -m venv .venv`
+4. `source .venv/bin/activate`
+5. `pip install -r requirements.txt`
+6. `pip install -e .`
+7. `affordbench list`
+8. `affordbench describe laso-qaq`
+9. `bash examples/demo_simulation_reviewer_walkthrough.sh`
+
+对应证据可见：
+
+- `submission/public_main_fresh_clone_build_evidence_20260412.md`
+
 ### Public source-ZIP install smoke
 
 如果想进一步证明 tagged archive 本身也能独立工作，可走：

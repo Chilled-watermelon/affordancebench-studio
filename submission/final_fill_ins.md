@@ -46,10 +46,12 @@
 - final public ZIP URL
   - `https://github.com/Chilled-watermelon/affordancebench-studio/archive/refs/tags/v0.1.2.zip`
 
-## Items still pending
+## Items completed at actual submission time
 
-- signed-in OpenReview upload of the overview PDF and supplementary ZIP
-- one final UI-side confirmation that the live form still matches `submission/final_submission_rehearsal_20260411.md`
+- signed-in OpenReview submission of the overview PDF was completed on `2026-04-12`
+- the live OpenReview form was confirmed to expose only `title`, `authors`, `authorids`, `keywords`, `TLDR`, `abstract`, and `pdf`
+- the live form did **not** expose a separate supplementary ZIP or public-URL field
+- the resulting submission note is recorded in `submission/openreview_actual_submission_20260412.md`
 
 ## Why this file exists
 
