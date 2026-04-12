@@ -48,7 +48,8 @@
 
 ## Items still pending
 
-- supplementary ZIP 按 `submission/supplementary_zip_file_list.md` 打包并最终过一遍文件名
+- signed-in OpenReview upload of the overview PDF and supplementary ZIP
+- one final UI-side confirmation that the live form still matches `submission/final_submission_rehearsal_20260411.md`
 
 ## Why this file exists
 

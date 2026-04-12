@@ -52,6 +52,7 @@ These are better kept in the working repo and should usually stay out of the fin
 
 ## Public links to mention inside the ZIP
 
+- project page: `https://chilled-watermelon.github.io/affordancebench-studio/`
 - repo: `https://github.com/Chilled-watermelon/affordancebench-studio`
 - release: `https://github.com/Chilled-watermelon/affordancebench-studio/releases/tag/v0.1.2`
 - source ZIP: `https://github.com/Chilled-watermelon/affordancebench-studio/archive/refs/tags/v0.1.2.zip`
