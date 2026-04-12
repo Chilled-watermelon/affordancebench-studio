@@ -21,6 +21,8 @@
 
 ## Final software links
 
+- public project page:
+  - `https://chilled-watermelon.github.io/affordancebench-studio/`
 - public repository:
   - `https://github.com/Chilled-watermelon/affordancebench-studio`
 - release page:
@@ -80,9 +82,9 @@
 1. upload the `4`-page overview PDF
 2. upload the supplementary ZIP
 3. ensure author order matches the PDF exactly
-4. set the project URL to the public repository
+4. set the project URL to the public project page
 5. set the source ZIP URL to the `v0.1.2` archive
-6. if OpenReview exposes an additional software/demo URL field, use the `v0.1.2` release page
+6. if OpenReview exposes an additional repository URL or software URL field, use the public repository or the `v0.1.2` release page as appropriate
 7. if the signed-in form still shows `Jul 16 2026` as the submission deadline, capture that mismatch and consider contacting the OSS chairs before relying on it
 
 ## Remaining manual action at actual submission time

@@ -11,7 +11,7 @@
   </p>
   <p>
     <a href="#quickstart">Quickstart</a> •
-    <a href="docs/index.md">Project Page</a> •
+    <a href="https://chilled-watermelon.github.io/affordancebench-studio/">Project Page</a> •
     <a href="#reviewer-friendly-path">Reviewer Path</a> •
     <a href="#command-families">Command Families</a> •
     <a href="#validation-evidence">Validation Evidence</a> •
@@ -137,6 +137,7 @@ The repository already includes review-facing evidence instead of only raw scrip
 
 ## Release Artifacts
 
+- public project page: [AffordanceBench Studio](https://chilled-watermelon.github.io/affordancebench-studio/)
 - public repository: [Chilled-watermelon/affordancebench-studio](https://github.com/Chilled-watermelon/affordancebench-studio)
 - release page: [v0.1.2](https://github.com/Chilled-watermelon/affordancebench-studio/releases/tag/v0.1.2)
 - source ZIP: [download v0.1.2](https://github.com/Chilled-watermelon/affordancebench-studio/archive/refs/tags/v0.1.2.zip)
@@ -185,6 +186,7 @@ affordancebench_studio/
 - quickstart: `docs/quickstart.md`
 - project page: `docs/index.md`
 - Pages-ready project page: `docs/index.html`
+- deployed project page: `https://chilled-watermelon.github.io/affordancebench-studio/`
 - architecture: `docs/architecture.md`
 - command reference: `docs/command_reference.md`
 - reproducibility notes: `docs/reproducibility.md`

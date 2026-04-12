@@ -59,6 +59,8 @@
 ## Final fill-ins before submission
 
 - 实际项目 public URL
+  - `https://chilled-watermelon.github.io/affordancebench-studio/`
+- public repository URL
   - `https://github.com/Chilled-watermelon/affordancebench-studio`
 - release URL
   - `https://github.com/Chilled-watermelon/affordancebench-studio/releases/tag/v0.1.2`

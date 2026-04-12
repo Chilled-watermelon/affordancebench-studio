@@ -26,6 +26,8 @@
   - `docs/index.md`
 - Pages-ready project page:
   - `docs/index.html`
+- deployed public project page:
+  - `https://chilled-watermelon.github.io/affordancebench-studio/`
 - demo walkthrough:
   - `submission/demo_walkthrough.md`
 - demo assets:

@@ -24,12 +24,14 @@
   - `502024150012@smail.nju.edu.cn`
   - `yang.wenming@sz.tsinghua.edu.cn`
 - final public project URL
-  - `https://github.com/Chilled-watermelon/affordancebench-studio`
+  - `https://chilled-watermelon.github.io/affordancebench-studio/`
 
 ### Project page
 
 - public repo URL
   - `https://github.com/Chilled-watermelon/affordancebench-studio`
+- public project page URL
+  - `https://chilled-watermelon.github.io/affordancebench-studio/`
 - release URL
   - `https://github.com/Chilled-watermelon/affordancebench-studio/releases/tag/v0.1.2`
 - overview paper PDF URL
