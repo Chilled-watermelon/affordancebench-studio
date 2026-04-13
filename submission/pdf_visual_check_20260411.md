@@ -11,10 +11,11 @@
 - `submission/final_assets/pdf_pages/mm26_open_source_overview_paper_v1_20260410-02.png`
 - `submission/final_assets/pdf_pages/mm26_open_source_overview_paper_v1_20260410-03.png`
 - `submission/final_assets/pdf_pages/mm26_open_source_overview_paper_v1_20260410-04.png`
+- `submission/final_assets/pdf_pages/mm26_open_source_overview_paper_v1_20260410-05.png`
 
 ## Findings
 
-- the frozen overview PDF is `4` pages
+- the frozen overview PDF is `5` pages (`4` pages of body content plus `1` references page)
 - the title, author block, abstract, keywords, and visible public links render correctly
 - the reviewer-facing evidence figure renders with the released output/evidence composite
 - the running head and conference metadata render as `ACM MM '26`

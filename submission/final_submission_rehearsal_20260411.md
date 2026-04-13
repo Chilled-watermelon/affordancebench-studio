@@ -15,12 +15,13 @@
 - local PDF:
   - `submission/final_assets/mm26_open_source_overview_paper_v1_20260410.pdf`
 - page count:
-  - `4`
+  - `5` (`4` pages of body content plus `1` references page)
 - frozen page images:
   - `submission/final_assets/pdf_pages/mm26_open_source_overview_paper_v1_20260410-01.png`
   - `submission/final_assets/pdf_pages/mm26_open_source_overview_paper_v1_20260410-02.png`
   - `submission/final_assets/pdf_pages/mm26_open_source_overview_paper_v1_20260410-03.png`
   - `submission/final_assets/pdf_pages/mm26_open_source_overview_paper_v1_20260410-04.png`
+  - `submission/final_assets/pdf_pages/mm26_open_source_overview_paper_v1_20260410-05.png`
 - public overview PDF target:
   - `https://github.com/Chilled-watermelon/affordancebench-studio/releases/download/v0.1.2/mm26_open_source_overview_paper_v1_20260410.pdf`
 
@@ -88,7 +89,7 @@
 
 ## OpenReview rehearsal checklist
 
-1. upload the `4`-page overview PDF
+1. upload the updated overview PDF (`4` pages of body content plus `1` references page)
 2. if the live form exposes a supplementary ZIP field, upload the final ZIP; otherwise keep the supplementary bundle in the public release assets
 3. ensure author order matches the PDF exactly
 4. if OpenReview exposes an additional project or software URL field, use the public project page
