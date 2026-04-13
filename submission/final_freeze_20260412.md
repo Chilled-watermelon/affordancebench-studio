@@ -11,6 +11,7 @@ This note freezes the final local PDF, the final supplementary ZIP, and the corr
 - OpenReview note id: `cjWBvEOs3S`
 - submission date: `2026-04-12`
 - OpenReview PDF refresh date: `2026-04-13`
+- local freeze polish date: `2026-04-13`
 - remote submission baseline commit: `a247a49`
 
 ## Frozen local artifacts
@@ -26,7 +27,7 @@ This note freezes the final local PDF, the final supplementary ZIP, and the corr
 
 ## SHA256
 
-- local overview PDF: `aa5c2913f8ecb13aff12a62ddf5b2d78b37202ac27459bf6102c4eac4be18948`
+- local overview PDF: `fe949134660e6d5c71e6596dc46936d11936f3db37c49cf280dc7fdf0228ae8b`
 - local supplementary ZIP: `73cfc8adf1792bcc40e8741929f51930a0d61747dfb317b5f5e02629f90dd687`
 - release asset overview PDF: `sha256:aa5c2913f8ecb13aff12a62ddf5b2d78b37202ac27459bf6102c4eac4be18948`
 - release asset supplementary ZIP: `sha256:73cfc8adf1792bcc40e8741929f51930a0d61747dfb317b5f5e02629f90dd687`
@@ -43,6 +44,7 @@ This note freezes the final local PDF, the final supplementary ZIP, and the corr
 
 - the final overview PDF was copied into a repo-local ASCII path under `submission/final_assets/`
 - PDF page images were regenerated from that frozen local copy
+- the local freeze was later refreshed with the stronger Figure 1 main visual while keeping the same `5`-page structure
 - the supplementary ZIP was rebuilt from the final reviewer-facing file list after the bibliography-expanded PDF freeze
 - both release assets on `v0.1.2` were refreshed with `--clobber` after the updated PDF/ZIP pair was ready
 - the signed-in OpenReview note `cjWBvEOs3S` was updated to use the bibliography-expanded PDF, and the author-visible note page showed `modified: 13 Apr 2026`
@@ -55,3 +57,4 @@ This note freezes the final local PDF, the final supplementary ZIP, and the corr
 - the live form did not expose a separate supplementary ZIP / project URL / repository URL / source ZIP URL field
 - the overview PDF therefore remains the primary place where public links must stay visible
 - the supplementary ZIP remains a release-side reviewer convenience artifact rather than an OpenReview upload
+- this local freeze is currently ahead of the public release/OpenReview PDF on the specific Figure 1 visual treatment only

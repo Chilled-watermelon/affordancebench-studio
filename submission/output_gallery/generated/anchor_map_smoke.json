@@ -1,0 +1,26 @@
+{
+  "knife_grasp": {
+    "anchor": "graspable handle area for safe gripping of knife blade and handle",
+    "original": "If I want to safely hand this knife to someone, where should I hold it?",
+    "object": "Knife",
+    "affordance": "grasp"
+  },
+  "mug_contain": {
+    "anchor": "open container cavity for holding objects of mug handle and cup body",
+    "original": "Where does the liquid stay inside this mug?",
+    "object": "Mug",
+    "affordance": "contain"
+  },
+  "chair_sit": {
+    "anchor": "stable seat surface for sitting of chair seat and back",
+    "original": "Where should a person sit on this chair?",
+    "object": "Chair",
+    "affordance": "sit"
+  },
+  "door_open": {
+    "anchor": "openable latch or handle mechanism of door handle and panel",
+    "original": "Which region should I use to open this door?",
+    "object": "Door",
+    "affordance": "open"
+  }
+}

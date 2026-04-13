@@ -17,6 +17,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.image as mpimg
 import matplotlib.pyplot as plt
+from matplotlib.patches import FancyArrowPatch, FancyBboxPatch
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
@@ -391,6 +392,243 @@ def build_output_evidence_composite() -> None:
     plt.close(fig)
 
 
+def build_secondary_evidence_panel() -> None:
+    fig = plt.figure(figsize=(18, 12), facecolor="#ffffff")
+    grid = fig.add_gridspec(2, 2, hspace=0.08, wspace=0.08)
+    placements = [
+        (grid[0, 0], DEMO_ROOT / "scene01_env_check.png"),
+        (grid[0, 1], DEMO_ROOT / "scene03_laso_dryrun.png"),
+        (grid[1, 0], OUT_ROOT / "anchor_map_preview.png"),
+        (grid[1, 1], OUT_ROOT / "output_evidence_composite.png"),
+    ]
+
+    for slot, path in placements:
+        ax = fig.add_subplot(slot)
+        image = mpimg.imread(path)
+        ax.imshow(image)
+        ax.axis("off")
+
+    plt.subplots_adjust(left=0.02, right=0.98, top=0.98, bottom=0.02)
+    fig.savefig(OUT_ROOT / "reviewer_evidence_secondary.png", dpi=180, bbox_inches="tight")
+    plt.close(fig)
+
+
+def build_figure1_main_visual() -> None:
+    fig = plt.figure(figsize=(18, 10.8), facecolor="#f8fafc")
+
+    def add_round_box(x: float, y: float, w: float, h: float, *, face: str = "#ffffff", edge: str = "#e2e8f0") -> None:
+        shadow = FancyBboxPatch(
+            (x + 0.004, y - 0.004),
+            w,
+            h,
+            boxstyle="round,pad=0.008,rounding_size=0.02",
+            linewidth=0,
+            facecolor="#cbd5e1",
+            alpha=0.18,
+            transform=fig.transFigure,
+            zorder=0.1,
+        )
+        box = FancyBboxPatch(
+            (x, y),
+            w,
+            h,
+            boxstyle="round,pad=0.008,rounding_size=0.02",
+            linewidth=1.0,
+            edgecolor=edge,
+            facecolor=face,
+            transform=fig.transFigure,
+            zorder=0.2,
+        )
+        fig.add_artist(shadow)
+        fig.add_artist(box)
+
+    def add_chip(ax, text: str, color: str) -> None:
+        ax.text(
+            0.0,
+            0.78,
+            text,
+            fontsize=12.5,
+            fontweight="bold",
+            color="#0f172a",
+            bbox=dict(boxstyle="round,pad=0.30", facecolor=color, edgecolor="none"),
+            transform=ax.transAxes,
+        )
+
+    add_round_box(0.025, 0.83, 0.95, 0.13, face="#ffffff")
+    hero_ax = fig.add_axes([0.04, 0.845, 0.92, 0.10], zorder=2)
+    hero_ax.axis("off")
+    hero_ax.text(
+        0.0,
+        0.88,
+        "AffordanceBench Studio",
+        fontsize=28,
+        fontweight="bold",
+        color="#0f172a",
+        transform=hero_ax.transAxes,
+    )
+    hero_ax.text(
+        0.0,
+        0.52,
+        "Simulation-first reviewer path for a buildable, inspectable, and demoable OSS submission.",
+        fontsize=13,
+        color="#475569",
+        transform=hero_ax.transAxes,
+    )
+    hero_ax.text(
+        0.92,
+        0.88,
+        "Figure 1",
+        ha="right",
+        fontsize=12,
+        fontweight="bold",
+        color="#64748b",
+        transform=hero_ax.transAxes,
+    )
+    badges = [
+        ("Buildable", "#dbeafe"),
+        ("Inspectable", "#ede9fe"),
+        ("Demoable", "#dcfce7"),
+        ("Extensible", "#fee2e2"),
+    ]
+    x = 0.0
+    for label, color in badges:
+        hero_ax.text(
+            x,
+            0.08,
+            label,
+            fontsize=11.5,
+            fontweight="bold",
+            color="#0f172a",
+            bbox=dict(boxstyle="round,pad=0.30", facecolor=color, edgecolor="none"),
+            transform=hero_ax.transAxes,
+        )
+        x += 0.15
+
+    card_y = 0.39
+    card_h = 0.38
+    card_w = 0.215
+    xs = [0.025, 0.265, 0.505, 0.745]
+    cards = [
+        ("1  Diagnose", "Clean-machine check before dataset setup", DEMO_ROOT / "scene01_env_check.png", "#dbeafe"),
+        ("2  Inspect", "Resolve a legacy-backed command path", DEMO_ROOT / "scene03_laso_dryrun.png", "#ede9fe"),
+        ("3  Generate", "Produce a concrete query artifact", OUT_ROOT / "anchor_map_preview.png", "#fde68a"),
+    ]
+
+    image_axes = []
+    for x, (label, subtitle, path, color) in zip(xs[:3], cards):
+        add_round_box(x, card_y, card_w, card_h, face="#ffffff")
+        text_ax = fig.add_axes([x + 0.015, card_y + card_h - 0.085, card_w - 0.03, 0.07], zorder=2)
+        text_ax.axis("off")
+        add_chip(text_ax, label, color)
+        text_ax.text(0.0, 0.08, subtitle, fontsize=10.5, color="#475569", transform=text_ax.transAxes)
+
+        image_ax = fig.add_axes([x + 0.012, card_y + 0.03, card_w - 0.024, card_h - 0.12], zorder=2)
+        image_ax.imshow(mpimg.imread(path), aspect="auto")
+        image_ax.axis("off")
+        image_axes.append(image_ax)
+
+    add_round_box(xs[3], card_y, card_w, card_h, face="#ffffff")
+    summary_ax = fig.add_axes([xs[3] + 0.018, card_y + 0.02, card_w - 0.036, card_h - 0.04], zorder=2)
+    summary_ax.axis("off")
+    add_chip(summary_ax, "4  Trust", "#dcfce7")
+    summary_ax.text(
+        0.0,
+        0.70,
+        "Reviewable package claim",
+        fontsize=19,
+        fontweight="bold",
+        color="#0f172a",
+        transform=summary_ax.transAxes,
+    )
+    for (label, value, fill), x in zip(
+        [
+            ("Commands", "29", "#dbeafe"),
+            ("Groups", "6", "#ede9fe"),
+            ("CLI", "Unified", "#dcfce7"),
+        ],
+        [0.0, 0.33, 0.66],
+    ):
+        rect = FancyBboxPatch(
+            (x, 0.48),
+            0.28,
+            0.13,
+            boxstyle="round,pad=0.015,rounding_size=0.02",
+            linewidth=0,
+            facecolor=fill,
+            transform=summary_ax.transAxes,
+        )
+        summary_ax.add_patch(rect)
+        summary_ax.text(x + 0.03, 0.56, label, fontsize=9.5, color="#475569", transform=summary_ax.transAxes)
+        summary_ax.text(x + 0.03, 0.50, value, fontsize=13.5, fontweight="bold", color="#0f172a", transform=summary_ax.transAxes)
+
+    lines = [
+        "Inspectable before full setup",
+        "Legacy workflows exposed through one command layer",
+        "Concrete artifact path before heavier execution",
+    ]
+    y = 0.34
+    for line in lines:
+        summary_ax.text(0.02, y, f"- {line}", fontsize=11.2, color="#1e293b", transform=summary_ax.transAxes)
+        y -= 0.12
+
+    fig.canvas.draw()
+    arrow_color = "#94a3b8"
+    for left_ax, right_ax in zip(image_axes, image_axes[1:]):
+        left_box = left_ax.get_position()
+        right_box = right_ax.get_position()
+        fig.add_artist(
+            FancyArrowPatch(
+                (left_box.x1 + 0.006, (left_box.y0 + left_box.y1) / 2),
+                (right_box.x0 - 0.006, (right_box.y0 + right_box.y1) / 2),
+                transform=fig.transFigure,
+                arrowstyle="-|>",
+                mutation_scale=16,
+                linewidth=2.2,
+                color=arrow_color,
+            )
+        )
+    last_box = image_axes[-1].get_position()
+    fig.add_artist(
+        FancyArrowPatch(
+            (last_box.x1 + 0.006, (last_box.y0 + last_box.y1) / 2),
+            (xs[3] - 0.006, card_y + card_h / 2),
+            transform=fig.transFigure,
+            arrowstyle="-|>",
+            mutation_scale=16,
+            linewidth=2.2,
+            color=arrow_color,
+        )
+    )
+
+    add_round_box(0.025, 0.05, 0.95, 0.25, face="#ffffff")
+    strip_head = fig.add_axes([0.04, 0.255, 0.92, 0.035], zorder=2)
+    strip_head.axis("off")
+    strip_head.text(
+        0.0,
+        0.70,
+        "Secondary evidence strip from the public release",
+        fontsize=15,
+        fontweight="bold",
+        color="#0f172a",
+        transform=strip_head.transAxes,
+    )
+    strip_head.text(
+        0.0,
+        0.08,
+        "Retain the original collage as raw public proof, but demote it beneath the software-facing hero flow.",
+        fontsize=10.5,
+        color="#64748b",
+        transform=strip_head.transAxes,
+    )
+
+    strip_ax = fig.add_axes([0.04, 0.065, 0.92, 0.17], zorder=2)
+    strip_ax.imshow(mpimg.imread(OUT_ROOT / "reviewer_evidence_secondary.png"), aspect="auto")
+    strip_ax.axis("off")
+
+    fig.savefig(OUT_ROOT / "figure1_main_visual.png", dpi=180, bbox_inches="tight", facecolor="#f8fafc")
+    plt.close(fig)
+
+
 def main() -> None:
     OUT_ROOT.mkdir(parents=True, exist_ok=True)
     build_anchor_preview()
@@ -400,6 +638,8 @@ def main() -> None:
     build_profile_summary_card()
     build_contact_sheet()
     build_output_evidence_composite()
+    build_secondary_evidence_panel()
+    build_figure1_main_visual()
     print(f"Generated output gallery assets in: {OUT_ROOT}")
 
 

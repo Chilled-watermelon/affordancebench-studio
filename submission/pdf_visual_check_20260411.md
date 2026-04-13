@@ -17,7 +17,7 @@
 
 - the frozen overview PDF is `5` pages (`4` pages of body content plus `1` references page)
 - the title, author block, abstract, keywords, and visible public links render correctly
-- the reviewer-facing evidence figure renders with the released output/evidence composite
+- Figure 1 now renders as a software-facing main visual with a smaller secondary evidence strip
 - the running head and conference metadata render as `ACM MM '26`
 - tables remain readable without visible clipping
 - `Conclusion` and `References` remain complete on the last page
