@@ -26,6 +26,15 @@ From the signed-in submission flow on `2026-04-12`:
 - public release asset:
   - `https://github.com/Chilled-watermelon/affordancebench-studio/releases/download/v0.1.2/mm26_open_source_overview_paper_v1_20260410.pdf`
 
+## Post-submission PDF refresh
+
+From the signed-in author view on `2026-04-13`:
+
+- the note remained editable by the authors
+- the submission PDF was replaced with the bibliography-expanded overview PDF
+- the note page showed `modified: 13 Apr 2026`
+- the signed-in OpenReview PDF viewer showed `5` pages, matching the updated local freeze (`4` pages of body content plus `1` references page)
+
 ## Practical implication
 
 - the actual signed-in form confirms that the overview PDF is the primary place where project page, repository, release, and source-ZIP links must remain visible

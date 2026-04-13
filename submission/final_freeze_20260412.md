@@ -10,6 +10,7 @@ This note freezes the final local PDF, the final supplementary ZIP, and the corr
 - track: `Open Source Software Track`
 - OpenReview note id: `cjWBvEOs3S`
 - submission date: `2026-04-12`
+- OpenReview PDF refresh date: `2026-04-13`
 - remote submission baseline commit: `a247a49`
 
 ## Frozen local artifacts
@@ -43,7 +44,8 @@ This note freezes the final local PDF, the final supplementary ZIP, and the corr
 - the final overview PDF was copied into a repo-local ASCII path under `submission/final_assets/`
 - PDF page images were regenerated from that frozen local copy
 - the supplementary ZIP was rebuilt from the final reviewer-facing file list after the bibliography-expanded PDF freeze
-- both release assets on `v0.1.2` should be refreshed with `--clobber` after the updated PDF/ZIP pair is ready
+- both release assets on `v0.1.2` were refreshed with `--clobber` after the updated PDF/ZIP pair was ready
+- the signed-in OpenReview note `cjWBvEOs3S` was updated to use the bibliography-expanded PDF, and the author-visible note page showed `modified: 13 Apr 2026`
 - public support documents were normalized away from external workspace paths with Chinese directory names
 - a rebuttal talk sheet was added for reject-style reviewer preparation
 
